@@ -1,6 +1,6 @@
 
 import pdb
-arr = [67, 87, 567, 9, 45]#[3, 97, 63, 55, 32, 56, 99, 22]
+arr = [3, 97, 63, 55, 32, 56, 99, 22]
 
 #=====================INSERTION SORT====================================
 
@@ -27,8 +27,8 @@ def selection_sort(unsorted_arr):
 	len_arr = len(unsorted_arr)
 	
 	def swap(index_1, index_2, swap_arr):
-		temp = unsorted_arr[index_1]
-		unsorted_arr[index_1] = unsorted_arr[index_2]
+		temp = swap_arr[index_1]
+		unsorted_arr[index_1] = swap_arr[index_2]
 		unsorted_arr[index_2] = temp
 	
 	for i in range(len_arr-1):
@@ -97,16 +97,34 @@ def merge_sort(unsorted_arr):
 		return unsorted_arr
 	return sorted_arr
 		
-	
-		
 
 #=====================QUICK SORT========================================
 
 
 def quick_sort(unsorted_arr):
-	
+	def swap(index_1, index_2, swap_arr):
+		temp = swap_arr[index_1]
+		unsorted_arr[index_1] = swap_arr[index_2]
+		unsorted_arr[index_2] = temp
 	len_arr = len(unsorted_arr)
-	
-	
-	
+	if len_arr > 1:
+		back = -1
+		front = 0
+		pivot = unsorted_arr[len_arr - 1]
+		
+		while front < len_arr:
+			if unsorted_arr[front] < pivot:
+				back += 1
+				swap(back, front, unsorted_arr)
+			front += 1
+	else:
+		return unsorted_arr
+	back += 1
 
+
+	left = quick_sort(unsorted_arr[:back])
+	right = quick_sort(unsorted_arr[back:len_arr-1])
+	return left + [pivot] + right
+
+
+print quick_sort(arr)
