@@ -16,8 +16,8 @@ def insertion_sort(unsorted_arr):
                 unsorted_arr[inc] = unsorted_arr[inc - 1]
                 inc -= 1
             unsorted_arr[inc] = key
-        print unsorted_arr
-    print unsorted_arr
+        print(unsorted_arr)
+    print (unsorted_arr)
 
 
 # =====================SELECTION SORT====================================
@@ -43,17 +43,17 @@ def selection_sort(unsorted_arr):
             swap(ex_index, pivot, unsorted_arr)
         pivot += 1
 
-    print unsorted_arr
+    print (unsorted_arr)
 
 
 # =====================BINARY SEARCH=====================================
 def binary_search(unsorted_arr, item):
     sorted_arr = sorted(unsorted_arr)
-    print sorted_arr
+    print (sorted_arr)
     len_arr = len(sorted_arr)
     bisect = len_arr / 2
     if item == sorted_arr[bisect]:
-        print "Item found at {}".format(bisect + 1)
+        print ("Item found at {}".format(bisect + 1))
     elif item < sorted_arr[bisect]:
         return binary_search(sorted_arr[:bisect - 1], item)
     elif item > sorted_arr[bisect]:
@@ -92,7 +92,7 @@ def merge_sort(unsorted_arr):
         arr1, arr2 = split_arrays(len_arr, unsorted_arr)
         arr1 = merge_sort(arr1)
         arr2 = merge_sort(arr2)
-        print arr1, arr2
+        print (arr1, arr2)
         sorted_arr = merge(arr1, arr2)
     else:
         return unsorted_arr

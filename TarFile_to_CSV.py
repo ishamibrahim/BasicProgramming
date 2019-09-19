@@ -8,6 +8,7 @@ CSV_FOLER = "./csv_files/"
 HEADER_FILE = "column_headers.tsv"
 DATA_FILE = "hit_data.tsv"
 
+
 def extract_tar_files_from(tar_folderpath):
         list_of_files = [filepath for filepath in os.listdir(tar_folderpath) if re.search("(.*)\.zip", filepath)]
         for file_with_ext in list_of_files:
@@ -20,8 +21,6 @@ def extract_tar_files_from(tar_folderpath):
                 tar_file_path = "{0}/{1}".format(tar_folderpath, file_with_ext)
                 extracted = os.system('unzip {0} -d {1}'.format(tar_file_path, new_directory))
 
-
-        return
 
 def create_csv_file():
         list_of_extracted_folders = [filepath for filepath in os.listdir(EXTRACTED_FOLDER) if os.path.isdir("{0}{1}".format(EXTRACTED_FOLDER, filepath))]
@@ -42,7 +41,6 @@ def create_csv_file():
                         for row in headerreader:
                                 header_list_list.append(row)
 
-
                 with open(data_file, 'r') as csv_dfile:
                         data_reader = csv.reader(csv_dfile, delimiter = '\t', quotechar = '"')
                         for row in data_reader:
@@ -56,9 +54,7 @@ def create_csv_file():
                                 file_writer.writerow(data_row)
 
 
-
-
 if __name__ == '__main__':
         extract_tar_files_from(os.environ.get('COMPRESSED_FILES_FOLDER'))
-        print os.environ.get('COMPRESSED_FILES_FOLDER')
+        print (os.environ.get('COMPRESSED_FILES_FOLDER'))
         create_csv_file()

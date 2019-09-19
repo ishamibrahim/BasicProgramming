@@ -30,16 +30,16 @@ def is_queen_safe(row, col, chessboard):
 
 
 
-print is_queen_safe(3, 3, CHESSBOARD)
+print (is_queen_safe(3, 3, CHESSBOARD))
 
 def create_chessboard(size):
     return [[0 for j in range(size)] for i in range(size)]
 
-def create nqueens(size):
+def create_nqueens(size):
     safe_list = []
     chessboard = create_chessboard(size)
     chess_len = len(chessboard)
-    while True:
+
         
 
         
