@@ -7,9 +7,6 @@ class Component:
     def __init__(self, *args, **kwargs):
         self._name = args[0]
 
-    def component_function(self):
-        pass
-
 
 class Composite(Component):
     def __init__(self, *args, **kwargs):
