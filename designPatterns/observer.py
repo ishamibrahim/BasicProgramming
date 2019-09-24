@@ -22,7 +22,6 @@ class Subject(object):
             if modifier != observer:
                 observer.update(self)
 
-
 class PowerPlant(Subject):
     def __init__(self, name=""):
         Subject.__init__(self)
@@ -55,5 +54,5 @@ c1.attach(o1)
 c1.attach(o2)
 
 
-c1.temperature = 80
+c1.temperature = 800
 c1.temperature = 100
