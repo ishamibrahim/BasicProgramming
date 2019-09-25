@@ -39,6 +39,7 @@ class SubSubHandler(Handler):
             print(" {} Handled by the SubSubHandler".format(request))
             return True
 
+
 class DefaultHandler(Handler):
     def _handle(self, request):
         print("{} Cannot be handled even by Default Handler".format(request))
