@@ -1,6 +1,6 @@
 class Director:
     """
-    The director class
+    The director class knows the parts to build
     """
 
     def __init__(self, builder):
@@ -30,7 +30,7 @@ class Builder:
 
 class CocoCarBuilder(Builder):
     """
-        The concrete builder
+        The concrete builder will build the object in its way
     """
     def add_seats(self):
         self.car.seats = "7 seater, leather"
@@ -42,6 +42,19 @@ class CocoCarBuilder(Builder):
             self.car.engine = "Turbo Engine , 4 cylinder"
 
 
+class CartBuilder(Builder):
+    """
+        The concrete builder will build the object in its way
+    """
+    def add_seats(self):
+        self.car.seats = "two seats for passenger, one for driver"
+
+    def add_tyres(self):
+        self.car.tyres = "2 Wooden wheels with spokes"
+
+    def add_engine(self):
+            self.car.engine = "No Engine, pulled by an animal"
+
 class Car:
     def __init__(self):
         self.seats = None
@@ -52,7 +65,7 @@ class Car:
         return "{0}  |  {1}  |  {2}".format(self.seats, self.tyres, self.engine)
 
 
-build = CocoCarBuilder()
+build = CartBuilder()
 director = Director(build)
 director.construct_car()
 mycar = director.get_car()
