@@ -51,8 +51,8 @@ o1 = TempObserver()
 o2 = TempObserver()
 
 c1.attach(o1)
-c1.attach(o2)
+c2.attach(o2)
 
 
 c1.temperature = 800
-c1.temperature = 100
+c2.temperature = 100
