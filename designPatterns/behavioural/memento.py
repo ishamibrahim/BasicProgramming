@@ -10,13 +10,13 @@ class Memento(object):
         for attr in vars(data):
             setattr(self, attr, copy.deepcopy(getattr(data, attr)))
 
+
 class Undoable(object):
     def __init__(self, ):
         self._load = None
 
     def save(self):
         self._load = Memento(self)
-
 
     def undo(self):
         for attr in vars(self):

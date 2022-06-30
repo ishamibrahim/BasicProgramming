@@ -48,5 +48,5 @@ grammar3 = OrExpression(grammar2, adverb)
 grammar4 = AndExpression(adjective, grammar3)
 
 
-
-print(grammar4.interpret("Badass Wick Kill Bloodily"))
+if __name__ == '__main__':
+    print(grammar4.interpret("Badass Wick not Kill Bloodily"))

@@ -1,45 +1,52 @@
-CHESSBOARD = [  [0,1,0,0],
-                [0,0,0,1],
-                [0,0,0,0],
-                [0,0,0,0]
-            ]
+import pdb
+
+positive_diagonals = set()
+negative_diagonals = set()
+column_index = set()
+final_boards = []
 
 
-
-def is_queen_safe(row, col, chessboard):
-    for i in range(len(chess_board)):
-        if chessboard[row][i] or chessboard[i][col]:
-            return False
-    
-    i = row
-    j = col
-    while (i>=0 and j>=0):
-        if chessboard[i][j]:
-            return False
-        i -= 1
-        j -= 1
-    
-    i = row
-    j = col
-    while (i<=0 and j > len(chessboard)):
-        if chessboard[i][j]:
-            return False
-        i -= 1
-        j += 1
-    return True
+def is_queen_safe(row, col):
+    safe = True
+    if (row-col) in negative_diagonals or (row+col) in positive_diagonals or col in column_index:
+        safe = False
+    return safe
 
 
+def backtrack_queens(row, size, chessboard):
+    if row == size:
+        final_boards.append([i[:] for i in chessboard])
+        return
 
-print (is_queen_safe(3, 3, CHESSBOARD))
+    else:
+        for col in range(size):
+            if not is_queen_safe(row, col):
+                continue
+            negative_diagonals.add(row-col)
+            positive_diagonals.add(row+col)
+            column_index.add(col)
+            chessboard[row][col] = "Q"
+            backtrack_queens(row+1, size, chessboard)
+            negative_diagonals.remove(row - col)
+            positive_diagonals.remove(row + col)
+            column_index.remove(col)
+            chessboard[row][col] = "."
 
-def create_chessboard(size):
-    return [[0 for j in range(size)] for i in range(size)]
 
 def create_nqueens(size):
-    safe_list = []
-    chessboard = create_chessboard(size)
-    chess_len = len(chessboard)
+    chessboard = [["."]* size for i in range(size)]
+    backtrack_queens(0, size, chessboard)
 
+create_nqueens(5)
+
+final_seq = ""
+for solution in final_boards:
+    for row in solution:
+        final_seq += " ".join(row)
+        final_seq += "\n"
+    final_seq += "\n"
+
+print(final_seq)
         
 
         

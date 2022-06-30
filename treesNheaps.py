@@ -1,6 +1,6 @@
 import pdb
 
-#=====================BINARY TREE=======================================
+#=====================BINARY search TREE=======================================
 arr = [3, 97, 63, 55, 32, 56, 99, 22]
 
 
@@ -13,8 +13,11 @@ class Bnode:
     def __str__(self):
         return "value : {}".format(self.value)
 
+    def __repr__(self):
+        return "Object val : {}".format(self.value)
 
-def create_binary_tree(linear_array):
+
+def create_binary_search_tree(linear_array):
     root = None
     curr_node = None
     for item in linear_array:
@@ -44,5 +47,9 @@ def create_binary_tree(linear_array):
         curr_node = root
     return root
 
+# =================== PRE/IN/POST ORDER ==========================
 
-tree = create_binary_tree(arr)
+arr = [3, 97, 63, 55, 32, 56, 99, 22]
+
+
+
