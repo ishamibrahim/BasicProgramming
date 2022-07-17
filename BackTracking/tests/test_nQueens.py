@@ -1,5 +1,5 @@
 import unittest
-from DynamicProgramming.nQueens_problem import is_queen_safe, NQueens
+from BackTracking.nQueens_problem import is_queen_safe, NQueens
 
 
 class TestnQueens(unittest.TestCase):

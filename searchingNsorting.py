@@ -156,7 +156,7 @@ def quick_sort_2(low, high, unsorted_arr):
 
 ################ HEAP SORT  ####################
 def create_min_heap(unsorted_arr):
-    min_heap = [-1000000, unsorted_arr[0]]
+    min_heap = [-float("inf"), unsorted_arr[0]]
     for i in unsorted_arr[1:]:
         min_heap.append(i)
         last_sorted_elem_index = len(min_heap) -1

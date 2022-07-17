@@ -62,7 +62,7 @@ def find_all_chars_in_string(test_str : str, char_str: str) -> List[str]:
 
 
 """
-    Problem 2. Given test string, find shortedst sub_strings whose characters are in a given second string
+    Problem 3. Given test string, find shortest sub_strings whose characters are in a given second string
     For this we copy the previous problem
 """
 
