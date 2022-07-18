@@ -42,12 +42,12 @@ def create_csv_file():
                                 header_list_list.append(row)
 
                 with open(data_file, 'r') as csv_dfile:
-                        data_reader = csv.reader(csv_dfile, delimiter = '\t', quotechar = '"')
+                        data_reader = csv.reader(csv_dfile, delimiter='\t', quotechar = '"')
                         for row in data_reader:
                                 data_list_list.append(row)
 
                 with open("{0}{1}.tsv".format(CSV_FOLER, extracted_folder), "w") as final_file:
-                        file_writer = csv.writer(final_file, delimiter = "\t", quotechar='"', quoting=csv.QUOTE_MINIMAL)
+                        file_writer = csv.writer(final_file, delimiter="\t", quotechar='"', quoting=csv.QUOTE_MINIMAL)
                         file_writer.writerow(header_list_list[0])
 
                         for data_row in data_list_list:

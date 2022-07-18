@@ -161,7 +161,7 @@ def create_min_heap(unsorted_arr):
         min_heap.append(i)
         last_sorted_elem_index = len(min_heap) -1
         last_sorted_parent_index = int(last_sorted_elem_index/2)
-        while last_sorted_parent_index > 0 :
+        while last_sorted_parent_index > 0:
             if min_heap[last_sorted_elem_index] < min_heap[last_sorted_parent_index]:
                 swap(last_sorted_parent_index, last_sorted_elem_index, min_heap)
             last_sorted_elem_index = last_sorted_parent_index
@@ -170,19 +170,21 @@ def create_min_heap(unsorted_arr):
 
 
 def heapify(min_heap):
-    # Removing first element
+    # Removing last element
     pop_index = len(min_heap) - 1
     last_elem = min_heap.pop(pop_index)
     if len(min_heap) > 1:
         min_heap[1] = last_elem
         elem_index = 1
 
-        if len(min_heap) > elem_index*2 or len(min_heap) > elem_index*2+1:
-            if len(min_heap) == elem_index * 2 + 1:
-                first_child_index = elem_index * 2
-            else:
-                first_child_index = elem_index*2 if min_heap[elem_index*2] < min_heap[elem_index*2+1] else elem_index*2+1
-            while first_child_index < len(min_heap)-1:
+        if len(min_heap) > elem_index*2:
+            first_child_index = elem_index * 2
+            while first_child_index < len(min_heap):
+                if len(min_heap) == elem_index * 2 + 1:
+                    first_child_index = elem_index * 2
+                else:
+                    first_child_index = elem_index*2 if min_heap[elem_index*2] < min_heap[elem_index*2+1] else elem_index*2+1
+
                 if min_heap[elem_index] > min_heap[first_child_index]:
                     swap(elem_index, first_child_index, min_heap)
                 elem_index = first_child_index
@@ -199,7 +201,7 @@ def heap_sort(unsorted_arr):
 
     return sorted_arr
 
-new_arr = [8, 3, -1, 5, 4, 3, 0]
+new_arr = [5, 3, -1, 8, 4, 3, 0, 9, 17, 14, 18, 13, 12, 15]
 
 print(heap_sort(new_arr))
 
