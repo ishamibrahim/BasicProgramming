@@ -49,7 +49,6 @@ def search_path_on_board(marked_locations, board, words, i, j, path=''):
 def search_words_in_board(words, board):
     result = set()
     marked_locations = [[False] * len(board[0]) for i in range(len(board))]
-    print(marked_locations)
     path = ''
     for i in range(len(board)):
         for j in range(len(board[0])):
@@ -63,7 +62,7 @@ if __name__ == '__main__':
         ['L', 'O', 'N']
     ]
 
-    words = ['STAR', 'NOTE', 'SAND', 'STONE', 'STAN']
+    words = ['STAR', 'NOTE', 'SAND', 'STONE', 'STORM']
 
     search_words_in_board(words, board)
     print(final_words)

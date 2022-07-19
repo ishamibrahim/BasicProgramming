@@ -45,6 +45,6 @@ def dijkstras_method(in_g, src_vertex):
 
     print(shortest_path_to_vertices)
 
-input_graph = Graph(GRAPH_3_DIRECTED)
+input_graph = Graph(GRAPH_2)
 dijkstras_method(input_graph, 0)
 

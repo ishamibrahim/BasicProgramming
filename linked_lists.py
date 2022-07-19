@@ -22,7 +22,7 @@ def create_linked_list(in_list: List) -> ListNode:
     return first_item
 
 
-def reverse_linked_list(lin_list: ListNode):
+def reverse_linked_list_using_iteration(lin_list: ListNode):
     old_item = lin_list
     new_item = lin_list.next
     old_item.next = None
@@ -40,6 +40,18 @@ def reverse_linked_list(lin_list: ListNode):
         return old_item
 
 
+def reverse_linked_list_using_recursion(in_list: ListNode):
+    if in_list.next == None:
+        return in_list
+
+    new_head = reverse_linked_list_using_recursion(in_list.next)
+    print(new_head.val)
+    next_node = in_list.next
+    next_node.next = in_list
+    in_list.next = None
+    return new_head
+
+
 def print_linked_list(lin_list: ListNode):
     l_item = lin_list
     ll_str = ""
@@ -51,8 +63,11 @@ def print_linked_list(lin_list: ListNode):
 
 
 if __name__ == "__main__":
-    mylist = ["a"]
+    mylist = ["a", "b", "c", "d"]
     l_list = create_linked_list(mylist)
     print_linked_list(l_list)
-    rev_list = reverse_linked_list(l_list)
+    rev_list = reverse_linked_list_using_iteration(l_list)
+    print_linked_list(rev_list)
+    l_list = create_linked_list(mylist)
+    rev_list = reverse_linked_list_using_recursion(l_list)
     print_linked_list(rev_list)
