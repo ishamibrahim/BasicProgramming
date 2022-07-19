@@ -67,9 +67,9 @@ def find_all_chars_in_string(test_str : str, char_str: str) -> List[str]:
 """
 
 
-def assign_shortest(shorter_srt: str, shortest_str: str) -> str:
+def assign_shortest(shorter_str: str, shortest_str: str) -> str:
 
-    return shorter_srt if len(shorter_srt) < len(shortest_str) else shortest_str
+    return shorter_str if len(shorter_str) < len(shortest_str) else shortest_str
 
 
 def find_shortest_substring_with_chars(test_str : str, char_str: str):
@@ -88,10 +88,10 @@ def find_shortest_substring_with_chars(test_str : str, char_str: str):
                 start += 1
             else:
                 end += 1
-    print(shortest_string)
+    print("shortest_string", shortest_string)
 
 
 if __name__ == '__main__':
     # print(find_indices_of_sum(given_arr, 7))
-    # find_all_chars_in_string(input_str, match_str)
-    find_shortest_substring_with_chars(input_str, match_str)
+    # print(find_all_chars_in_string(input_str, match_str))
+    find_shortest_substring_with_chars("asdfsubsdfssdcsbadfsd", match_str)

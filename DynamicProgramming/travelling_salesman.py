@@ -11,7 +11,7 @@ class Graph:
 def find_cheapest_path_to_remaining_vertices(in_g: Graph, remaining_vertices: list, src_vertex: int,
                                              current_vertex: int, path_taken: str) -> (int, str):
     if not remaining_vertices:
-        return in_g.graph[current_vertex][src_vertex], "{}".format( src_vertex)
+        return in_g.graph[current_vertex][src_vertex], "{}".format(src_vertex)
 
     cost_list = []
     path_list = []

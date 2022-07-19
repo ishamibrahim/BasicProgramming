@@ -6,7 +6,7 @@ import pdb
 
 
 class WordBreakProblem:
-    WORD_LIST = ["i", "like", "want", "sam", "sung", "samsung", "mobile", "ice", "cream", "icecream", "man", "go",
+    WORD_LIST = ["like", "want", "sam", "sung", "samsung", "mobile", "ice", "cream", "icecream", "man", "go",
                  "mango"]
 
     @staticmethod
@@ -15,23 +15,23 @@ class WordBreakProblem:
 
     @staticmethod
     def word_check(word: str, is_exists: bool, output_list:  list) -> bool:
+        new_is_exists = False
         checker = ""
-        if word == "":
-            is_exists = True
         for i in range(len(word)):
             checker += word[i]
             print(" checker: ", checker)
-            if checker in WordBreakProblem.WORD_LIST and checker not in output_list:
+            if checker in WordBreakProblem.WORD_LIST:
                 output_list.append(checker)
-                is_exists = WordBreakProblem.word_check(word[i+1:], is_exists, output_list)
-            if not WordBreakProblem.is_word_in_list(checker, WordBreakProblem.WORD_LIST):
+                new_is_exists = True
+            elif not WordBreakProblem.is_word_in_list(checker, WordBreakProblem.WORD_LIST):
+                new_is_exists = WordBreakProblem.word_check(word[1:], is_exists, output_list)
                 break
 
-        return is_exists
+        return is_exists or new_is_exists
 
 
 if __name__ == "__main__":
-    input_word = "ilikemango"
+    input_word = "ilikemangoicecream"
     outputs = []
     is_word_there = WordBreakProblem.word_check(input_word, False, outputs)
     print(is_word_there)
