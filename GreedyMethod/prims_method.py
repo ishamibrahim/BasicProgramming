@@ -50,10 +50,6 @@ def find_mcst_by_prims(pg: Graph):
     visited_nonde_matrix = create_visited_node_matrix(visited_nonde_vertices)
     while visited_node_count < pg.v:
         min_cost, source, dest = find_most_min_cost_in_matrix(pg.graph, visited_nonde_matrix)
-        if visited_nonde_vertices[source] and visited_nonde_vertices[dest]:
-            visited_nonde_matrix[source][dest] = True
-            visited_nonde_matrix[dest][source] = True
-            continue
         if not visited_nonde_vertices[source]:
             visited_nonde_vertices[source] = True
         if not visited_nonde_vertices[dest]:
