@@ -30,19 +30,30 @@ GRAPH_2 = [
 ]
 
 
-# GRAPH_1_UNUSUAL file : constants/graph_3_directed.jpeg
+# GRAPH_3_DIRECTED file : constants/graph_3_directed.jpeg
 GRAPH_3_DIRECTED = [
-    [   0, 50, 45,   10,   INF, INF],
-    [ INF,   0,   10, 15, INF,   INF],
-    [ INF,   INF,   0, INF,   30,   INF],
-    [   INF, INF, INF,   0,   15,   INF],
-    [   INF, 20,   35,   INF,   0, INF],
-    [ INF,   INF,   INF,   INF, 3,   0]
+    [   0,  50,  45,  10,  INF, INF],
+    [ INF,   0,  10,  15, INF,  INF],
+    [ INF, INF,   0, INF,  30,  INF],
+    [ INF, INF, INF,   0,  15,  INF],
+    [ INF,  20,  35,  INF,  0,  INF],
+    [ INF, INF, INF,  INF,  3,    0]
 ]
-# GRAPH_1_UNUSUAL file : constants/graph_4_directed.jpeg
+# GRAPH_4_DIRECTED file : constants/graph_4_directed.jpeg
 GRAPH_4_DIRECTED = [
     [0, 10, 15, 20],
     [5,  0,  9, 10],
     [6, 13,  0, 12],
     [8,  8,  9,  0]
+]
+
+# GRAPH_5_NEGATIVE file : constants/graph_5_negative.jpg
+GRAPH_5_NEGATIVE = [
+    [  0,   6,   5,   5, INF, INF, INF],
+    [INF,   0, INF, INF,  -1, INF, INF],
+    [INF,  -2,   0,  INF,  1, INF, INF],
+    [INF, INF,  -2,   0, INF,  -1, INF],
+    [INF, INF, INF, INF,   0, INF,   3],
+    [INF, INF, INF, INF, INF,   0,   3],
+    [INF, INF, INF, INF, INF, INF,   0],
 ]
