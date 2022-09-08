@@ -43,5 +43,5 @@ def find_cheapest_path_for_graph(in_g: Graph, src_vertex: int):
 
 if __name__ == "__main__":
     in_g = Graph(GRAPH_4_DIRECTED)
-    source = 3
+    source = 0
     find_cheapest_path_for_graph(in_g, source)

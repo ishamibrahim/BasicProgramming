@@ -36,9 +36,9 @@ NEGATIVE_ROMANS = {
 class Sol:
     def romanToInteger(self, s: str) -> int:
         total = 0
-        for d_ind in range(len(s) - 1, -1, -1):
+        for d_ind in range(len(s)):
             digit = s[d_ind]
-            if total and SYMBOL_PRECEDENCE_DICT[digit] < SYMBOL_PRECEDENCE_DICT[s[d_ind + 1]]:
+            if (d_ind + 1 < len(s)) and SYMBOL_PRECEDENCE_DICT[digit] < SYMBOL_PRECEDENCE_DICT[s[d_ind + 1]]:
                 total -= ROMAN_SYMBOLS[digit]
             else:
                 total += ROMAN_SYMBOLS[digit]
@@ -51,18 +51,20 @@ class Sol:
         remaining_num = 0
         for rom, rom_val in reversed_romans:
             if num >= rom_val and num < last_rom_val:
-
                 if str(num)[0] in ('9', '4'):
                     num_str = str(num)
                     return_rom = NEGATIVE_ROMANS[last_rom] + last_rom
                     num_str = num_str[1:]
                     if num_str:
                         remaining_num = int(num_str)
+                        break
                     else:
                         remaining_num = 0
+                        break
                 else:
                     return_rom = rom
                     remaining_num = num - rom_val
+                    break
 
             last_rom_val = rom_val
             last_rom = rom
@@ -85,3 +87,4 @@ class Sol:
 
 sol = Sol()
 print(sol.intToRoman(1994))
+print(sol.romanToInteger("MCMXCIV"))

@@ -47,7 +47,7 @@ def find_all_chars_in_string(test_str : str, char_str: str) -> List[str]:
     start = 0
     end = 1
     substring_list = list()
-    while start < len(test_str) and end <= len(test_str):
+    while start <= (len(test_str) - len(char_str)) and end <= len(test_str):
         sub_str = test_str[start:end]
         print(sub_str)
         if is_chars_in_string(char_str, sub_str):
@@ -72,16 +72,16 @@ def assign_shortest(shorter_str: str, shortest_str: str) -> str:
     return shorter_str if len(shorter_str) < len(shortest_str) else shortest_str
 
 
-def find_shortest_substring_with_chars(test_str : str, char_str: str):
+def find_shortest_substring_with_chars(test_str: str, char_str: str):
     start = 0
     end = 1
     shortest_string = test_str
     while start < len(test_str) and end <= len(test_str):
         sub_str = test_str[start:end]
-
+        print(sub_str)
         if is_chars_in_string(char_str, sub_str):
             shortest_string = assign_shortest(sub_str, shortest_string)
-            print(shortest_string)
+             # print("short string :", shortest_string)
             start += 1
         else:
             if end > len(test_str):

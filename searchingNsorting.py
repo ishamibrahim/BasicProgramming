@@ -171,8 +171,7 @@ def create_min_heap(unsorted_arr):
 
 def heapify(min_heap):
     # Removing last element
-    pop_index = len(min_heap) - 1
-    last_elem = min_heap.pop(pop_index)
+    last_elem = min_heap.pop()
     if len(min_heap) > 1:
         min_heap[1] = last_elem
         elem_index = 1

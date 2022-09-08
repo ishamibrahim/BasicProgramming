@@ -30,24 +30,25 @@ def find_shortest_path_to_vertex(cur_vtx, in_g, shortest_path_to_vertices):
 
 def shortest_path_map_changed(old_list: list, new_list: list) -> bool:
     if old_list == new_list:
-        return True
-    else:
+        print("same found")
         return False
+    else:
+        return True
 
 
 def bellman_ford_method(in_g, src_vertex):
     shortest_path_to_vertices = [INF] * in_g.v
     shortest_path_to_vertices[src_vertex] = 0
-    last_shortest_path_to_vertices = copy.deepcopy(shortest_path_to_vertices)
+    last_shortest_path_to_vertices = []
     redoing_graph_count = 0
 
     while redoing_graph_count < in_g.v -1:
         for current_vertx in range(in_g.v):
             find_shortest_path_to_vertex(current_vertx, in_g, shortest_path_to_vertices)
         print(shortest_path_to_vertices)
-        if shortest_path_map_changed(last_shortest_path_to_vertices, shortest_path_to_vertices):
+        if not shortest_path_map_changed(last_shortest_path_to_vertices, shortest_path_to_vertices):
             break
-        last_shortest_path_to_vertices = shortest_path_to_vertices
+        last_shortest_path_to_vertices = copy.deepcopy(shortest_path_to_vertices)
 
         redoing_graph_count += 1
 

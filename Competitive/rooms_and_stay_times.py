@@ -18,13 +18,13 @@ class Room:
 for customer in customer_list:
     start_time, duration = customer
     room_found = False
-    if room_list:
-        for room_no in range(len(room_list)):
-            if room_list[room_no] < start_time:
-                room_list[room_no] = start_time + duration
-                occupied_list[room_no] += 1
-                room_found = True
-                break
+
+    for room_no in range(len(room_list)):
+        if room_list[room_no] < start_time:
+            room_list[room_no] = start_time + duration
+            occupied_list[room_no] += 1
+            room_found = True
+            break
 
     if not room_found:
         room_list.append(start_time + duration)

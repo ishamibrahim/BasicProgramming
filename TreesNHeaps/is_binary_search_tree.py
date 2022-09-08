@@ -17,21 +17,47 @@ class Bnode:
         return "Object val : {}".format(self.value)
 
 
+
+
+
+# =================== BINARY SEARCH TREE ==========================
+
+"""
+Given a binary tree in the form of an array, check if its a binary search tree or not
+"""
+new_arr = [0, 10, 7, 12, 4, 9, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0 ]
+
+
+class Node:
+    def __init__(self, val=None):
+        self.data = val
+        self.left = None
+        self.right = None
+
+    @staticmethod
+    def print_tree(node):
+        if node == None:
+            return
+
+        Node.print_tree(node.left)
+        print(node.data)
+        Node.print_tree(node.right)
+
 def create_binary_search_tree(linear_array):
     root = None
     curr_node = None
     for item in linear_array:
-        node_item = Bnode(item)
+        node_item = Node(item)
+        if not item:
+            continue
         if not root:
             root = node_item
+            continue
         while True:
             if not curr_node:
                 curr_node = node_item
                 break
-            elif not curr_node.value:
-                curr_node = node_item
-                break
-            elif item < curr_node.value:
+            elif item < curr_node.data:
                 if not curr_node.left:
                     curr_node.left = node_item
                     break
@@ -46,32 +72,6 @@ def create_binary_search_tree(linear_array):
                     curr_node = curr_node.right
         curr_node = root
     return root
-
-
-# =================== BINARY SEARCH TREE ==========================
-
-"""
-Given a binary tree in the form of an array, check if its a binary search tree or not
-"""
-new_arr = [0, 10, 7, 12, 4, 9, 0, 0, 1, 5, 0, 0, 0, 0, 0, 0 ]
-
-
-class Node:
-    def __init__(self):
-        self.data = None
-        self.left = None
-        self.right = None
-
-    @staticmethod
-    def print_tree(node):
-        if node == None:
-            return
-        Node.print_tree(node.left)
-        print(node.data)
-        Node.print_tree(node.right)
-
-
-last_parsed = -1
 
 
 def input_items(node, i, node_arr):
@@ -94,6 +94,7 @@ def check_binary_search_tree(root):
     result = check_for_bst(root, result)
     return result
 
+last_parsed = -1
 
 def check_for_bst(node, result):
     global last_parsed
@@ -113,5 +114,7 @@ def check_for_bst(node, result):
 c = Node()
 
 input_items(c, 1, new_arr)
-Node.print_tree(c)
-print(check_binary_search_tree(c))
+# Node.print_tree(c)
+# print(check_binary_search_tree(c))
+btee = create_binary_search_tree(arr)
+btee.print_tree(btee)
