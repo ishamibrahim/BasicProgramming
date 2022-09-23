@@ -20,8 +20,8 @@ class Sol:
             self.increment_person_count(sender, receiver, person_dict)
 
         print(person_dict)
-        over_transaction_users = [int(person) for person, count in person_dict.items() if count >= threshold]
+        over_transaction_users = [person for person, count in person_dict.items() if count >= threshold]
 
-        return [str(person) for person in sorted(over_transaction_users)]
+        return sorted(over_transaction_users)
 s = Sol()
-print(s.process_logs(["3 5 13", "5 2 567", "8 5 278"], 2))
+print(s.process_logs(["3 5 13", "5 2 567", "3 5 278" ], 2))

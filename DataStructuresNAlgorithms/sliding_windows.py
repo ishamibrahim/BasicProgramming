@@ -54,7 +54,7 @@ def find_all_chars_in_string(test_str : str, char_str: str) -> List[str]:
             substring_list.append(sub_str)
             start += 1
         else:
-            if end > len(test_str):
+            if end == len(test_str):
                 start += 1
             else:
                 end += 1
@@ -84,7 +84,7 @@ def find_shortest_substring_with_chars(test_str: str, char_str: str):
              # print("short string :", shortest_string)
             start += 1
         else:
-            if end > len(test_str):
+            if end == len(test_str):
                 start += 1
             else:
                 end += 1

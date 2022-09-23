@@ -1,4 +1,6 @@
 class Sol:
+    # For additional verification
+    total_val = ""
     """
         Find the number of carried number during the addition of two input numbers
         Ex. 142 + 87 :
@@ -20,6 +22,7 @@ class Sol:
         max_len = max([len1, len2])
         position_counter = 1
         carriage = 0
+
         while True:
             last_sum = 0
             if position_counter > max_len:
@@ -30,11 +33,12 @@ class Sol:
                 last_sum = int(str_num1[-position_counter]) + carriage
             elif position_counter <= len2:
                 last_sum = int(str_num2[-position_counter]) + carriage
-
-            carriage = last_sum % 9 if last_sum >= 10 else 0
+            self.total_val = str(last_sum)[-1] + self.total_val
+            carriage = 1 if last_sum >= 10 else 0
             if carriage:
                 carriage_count += 1
             position_counter += 1
+        self.total_val = "  " + self.total_val
         return carriage_count
 
 
@@ -48,3 +52,4 @@ print(s.number_of_carry_operations(1, 99999))  # 5
 print(s.number_of_carry_operations(999045, 1055))  # 5
 print(s.number_of_carry_operations(101, 809))  # 1
 print(s.number_of_carry_operations(189, 209))  # 1
+print("total value ", s.total_val)

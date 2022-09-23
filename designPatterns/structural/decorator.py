@@ -15,6 +15,22 @@ def best_song():
 
 print(best_song())
 ########################################################################################################################
+def avoid_zero_divide(func):
+    def inner_func (*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except ZeroDivisionError:
+            return float("inf")
+
+    return inner_func
+
+
+@avoid_zero_divide
+def divide(x: int, y: int):
+    return x/y
+
+print(divide(5, 2))
+########################################################################################################################
 
 class CakeAbstract(object):
     """

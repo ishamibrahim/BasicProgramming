@@ -39,8 +39,7 @@ def search_path_on_board(marked_locations, board, words, i, j, path=''):
             new_r = i + row[k]
             new_c = j + col[k]
 
-            if 0 <= new_r < len(board) and 0 <= new_c < len(board[0]):
-                if not marked_locations[new_r][new_c]:
+            if 0 <= new_r < len(board) and 0 <= new_c < len(board[0]) and not marked_locations[new_r][new_c]:
                     search_path_on_board(marked_locations, board, words, new_r, new_c, path)
 
     marked_locations[i][j] = False

@@ -52,8 +52,8 @@ class WordBreakProblem:
 
 
 if __name__ == "__main__":
-    input_word = "belikebolar"
+    input_word = "ilikesamsung"
     outputs = []
     # WordBreakProblem.word_check_recursion(input_word, outputs)
-    WordBreakProblem.word_check(input_word, outputs)
+    WordBreakProblem.word_check_no_recursion(input_word, outputs)
     print(outputs)

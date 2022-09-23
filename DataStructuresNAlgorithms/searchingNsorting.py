@@ -1,6 +1,6 @@
 import pdb
 
-arr = [3, 97, 63, 55, 32, 56, 99, 22]
+UNSORTED_ARR = [3, 97, 63, 55, 32, 56, 99, 22]
 
 
 # =====================INSERTION SORT====================================
@@ -26,11 +26,6 @@ def selection_sort(unsorted_arr):
     pivot = 0
     len_arr = len(unsorted_arr)
 
-    def swap(index_1, index_2, swap_arr):
-        temp = swap_arr[index_1]
-        unsorted_arr[index_1] = swap_arr[index_2]
-        unsorted_arr[index_2] = temp
-
     for i in range(len_arr - 1):
         ex_index = pivot
         ex = None
@@ -40,7 +35,8 @@ def selection_sort(unsorted_arr):
                 ex = True
         if ex:
             # Swapping
-            swap(ex_index, pivot, unsorted_arr)
+            unsorted_arr[ex_index], unsorted_arr[pivot] = unsorted_arr[pivot], unsorted_arr[ex_index]
+            # swap(ex_index, pivot, unsorted_arr)
         pivot += 1
 
     print (unsorted_arr)
@@ -202,6 +198,8 @@ def heap_sort(unsorted_arr):
 
 new_arr = [5, 3, -1, 8, 4, 3, 0, 9, 17, 14, 18, 13, 12, 15]
 
-print(heap_sort(new_arr))
+# print(heap_sort(new_arr))
+
+selection_sort(UNSORTED_ARR)
 
 

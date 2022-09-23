@@ -31,7 +31,7 @@ def is_queen_safe(row, col):
     return safe
 
 
-def backtrack_queens( row, size, chessboard):
+def backtrack_queens(row, size, chessboard):
     if row == size:
         NQueens.final_boards.append([i[:] for i in chessboard])
         return
