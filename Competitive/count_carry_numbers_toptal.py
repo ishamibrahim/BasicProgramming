@@ -2,6 +2,7 @@ class Sol:
     # For additional verification
     total_val = ""
     """
+        Time: 15 mins
         Find the number of carried number during the addition of two input numbers
         Ex. 142 + 87 :
                 2 + 7 = 9 --> No carry numbers
@@ -53,3 +54,6 @@ print(s.number_of_carry_operations(999045, 1055))  # 5
 print(s.number_of_carry_operations(101, 809))  # 1
 print(s.number_of_carry_operations(189, 209))  # 1
 print("total value ", s.total_val)
+
+arr = [142, 87]
+
