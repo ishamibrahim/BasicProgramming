@@ -1,15 +1,15 @@
 import pdb
 
 """
-    This is to list all possible words from a matrix that can occur by moving all eightways from word to word
+    This is to list all possible words from a matrix that can occur by moving all eight ways from word to word
     in the matrix
     
     we check if a word exists in a matrix.. like a crossword puzzle except here the words need not be in a straight line
 """
 # Below lists detail all eight possible movements from a cell
 # (top, right, bottom, left, and four diagonal moves)
-row = [-1, -1, -1, 0, 1, 0, 1, 1]
-col = [-1, 1, 0, -1, -1, 1, 0, 1]
+row_movements = [-1, -1, -1, 0, 1, 0, 1, 1]
+col_movements = [-1, 1, 0, -1, -1, 1, 0, 1]
 
 final_words = []
 
@@ -35,9 +35,9 @@ def search_path_on_board(marked_locations, board, words, i, j, path=''):
         if path in words:
             print_marked_locations(marked_locations)
             final_words.append(path)
-        for k in range(len(row)):
-            new_r = i + row[k]
-            new_c = j + col[k]
+        for k in range(len(row_movements)):
+            new_r = i + row_movements[k]
+            new_c = j + col_movements[k]
 
             if 0 <= new_r < len(board) and 0 <= new_c < len(board[0]) and not marked_locations[new_r][new_c]:
                     search_path_on_board(marked_locations, board, words, new_r, new_c, path)
@@ -46,9 +46,7 @@ def search_path_on_board(marked_locations, board, words, i, j, path=''):
 
 
 def search_words_in_board(words, board):
-    result = set()
     marked_locations = [[False] * len(board[0]) for i in range(len(board))]
-    path = ''
     for i in range(len(board)):
         for j in range(len(board[0])):
             search_path_on_board(marked_locations, board, words, i, j)
@@ -61,7 +59,7 @@ if __name__ == '__main__':
         ['L', 'O', 'N']
     ]
 
-    words = ['STAR', 'NOTE', 'SAND', 'STONE', 'STORM']
+    words = ['STAR', 'NOTE', 'SAND', 'STONE', 'STORM', 'MATE', 'STEW', 'MANY']
 
     search_words_in_board(words, board)
     print(final_words)

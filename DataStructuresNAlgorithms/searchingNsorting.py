@@ -1,6 +1,6 @@
 import pdb
 
-UNSORTED_ARR = [3, 97, 63, 55, 32, 56, 99, 22]
+UNSORTED_ARR = [17, 63, 3, 99, 55, 32, 56, 22]
 
 
 # =====================INSERTION SORT====================================
@@ -137,18 +137,18 @@ def swap(ind1, ind2, arr):
 
 def quick_sort_2(low, high, unsorted_arr):
     if low < high:
-        f = low
-        b = low-1
+        front = low
+        back = low-1
         piv = unsorted_arr[high]
-        while f <= high:
-            if unsorted_arr[f] < piv:
-                b += 1
-                swap(b, f, unsorted_arr)
-            f += 1
-        b += 1
-        swap(b, high, unsorted_arr)
-        quick_sort_2(low, b-1, unsorted_arr)
-        quick_sort_2(b+1, high, unsorted_arr)
+        while front < high:
+            if unsorted_arr[front] < piv:
+                back += 1
+                swap(back, front, unsorted_arr)
+            front += 1
+        back += 1
+        swap(back, high, unsorted_arr)
+        quick_sort_2(low, back-1, unsorted_arr)
+        quick_sort_2(back+1, high, unsorted_arr)
 
 ################ HEAP SORT  ####################
 def create_min_heap(unsorted_arr):
@@ -174,7 +174,7 @@ def heapify(min_heap):
 
         if len(min_heap) > elem_index*2:
             first_child_index = elem_index * 2
-            while first_child_index < len(min_heap):
+            while elem_index * 2 + 1 <= len(min_heap):
                 if len(min_heap) == elem_index * 2 + 1:
                     first_child_index = elem_index * 2
                 else:
@@ -183,7 +183,6 @@ def heapify(min_heap):
                 if min_heap[elem_index] > min_heap[first_child_index]:
                     swap(elem_index, first_child_index, min_heap)
                 elem_index = first_child_index
-                first_child_index = elem_index * 2
 
 
 def heap_sort(unsorted_arr):
@@ -198,8 +197,5 @@ def heap_sort(unsorted_arr):
 
 new_arr = [5, 3, -1, 8, 4, 3, 0, 9, 17, 14, 18, 13, 12, 15]
 
-# print(heap_sort(new_arr))
-
-selection_sort(UNSORTED_ARR)
-
+print(heap_sort(new_arr))
 

@@ -3,8 +3,8 @@ Given a string, get triple binary string of it. Take the conversion of word to s
 
 
 Ex : Input : "abc"
-Step1: Convert to ASCII integers  97, 98 , 99
-Step2: Convert to 8 digit binary 01100001,01100010, 01100011
+Step1: Convert to ASCII integers  97, 98, 99
+Step2: Convert to 8 digit binary 01100001, 01100010, 01100011
 Step3: Triple the binaries 000111111000000000000111, 000111111000000000111000, 000111111000000000111111
 Step 4:  Join for Output : 000111111000000000000111000111111000000000111000000111111000000000111111
 

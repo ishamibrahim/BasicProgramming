@@ -1,8 +1,10 @@
 """
+Time : 45 mins
 Given a string consisting of '*' and '|', show how many '*'s are enclosed withing two '|'
 in substring with starting index list and ending index list.
  Start and end index pairs are related on their respective positions
 """
+
 
 class Sol:
     def number_of_items(self, ex_str, start_indices, end_indices):
@@ -22,4 +24,4 @@ class Sol:
         return result_count_list
 
 s = Sol()
-print(s.number_of_items("*|***|*|**|*****", [1,1], [2, 14]))
+print(s.number_of_items("*|***|*|**|*****", [1,1], [4, 6]))

@@ -1,6 +1,8 @@
-
-SET_OF_NUMS = [5, 10, 12, 13, 15, 18]
-sum_nums = sum(SET_OF_NUMS)
+"""
+Find all subsets in a list whose SUM equals given number
+"""
+SET_OF_NUMS = [30, 12, 15, 18, 13, 5, 10 ]
+SUM_NUMS = sum(SET_OF_NUMS)
 LEN_OF_NUMS = len(SET_OF_NUMS)
 final_subset_list = []
 FINAL_SUM = 30
@@ -10,14 +12,16 @@ def find_subsets(start: int, subset_list: list, total: int):
     print(subset_list, " ------- ", total)
     if total == FINAL_SUM:
         final_subset_list.append("-".join(map(lambda x: str(x), subset_list)))
-    if start < LEN_OF_NUMS:
+    elif start < LEN_OF_NUMS:
         for i in range(start, LEN_OF_NUMS):
             subset_list.append(SET_OF_NUMS[i])
             total += SET_OF_NUMS[i]
             if total > FINAL_SUM:
                 if subset_list:
+                    print(subset_list, " ------- ", total, " rejected")
                     total -= SET_OF_NUMS[i]
                     subset_list.pop()
+
             else:
                 find_subsets(i+1, subset_list, total)
                 total -= SET_OF_NUMS[i]

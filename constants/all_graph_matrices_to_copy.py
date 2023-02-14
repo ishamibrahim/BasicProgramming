@@ -21,19 +21,12 @@ GRAPH_1_UNUSUAL = [
 ]
 
 # GRAPH_2 file : constants/graph_2.jpeg
-# GRAPH_2 = [
-#     [   0,   2, INF,   6, INF],
-#     [   2,   0,   3,   8,   5],
-#     [ INF,   3,   0, INF,   7],
-#     [   6,   8, INF,   0,   9],
-#     [ INF,   5,   7,   9,   0]
-# ]
 GRAPH_2 = [
     [   0,   2, INF,   6, INF],
     [   2,   0,   3,   8,   5],
     [ INF,   3,   0, INF,   7],
-    [   6,   8, INF,   0,   1],
-    [ INF,   5,   7,   1,   0]
+    [   6,   8, INF,   0,   9],
+    [ INF,   5,   7,   9,   0]
 ]
 
 

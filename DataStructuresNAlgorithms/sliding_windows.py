@@ -30,7 +30,7 @@ def find_indices_of_sum(givenarr: list, sum_to_find: int) -> set:
 """
     Problem 2. Given test string, find all sub_strings whose characters are in a given second string
 """
-input_str = "fa4chba4c444cba"
+input_str = "fa4chba4c444cbadd2"
 match_str = "abc"
 
 
@@ -54,10 +54,7 @@ def find_all_chars_in_string(test_str : str, char_str: str) -> List[str]:
             substring_list.append(sub_str)
             start += 1
         else:
-            if end == len(test_str):
-                start += 1
-            else:
-                end += 1
+            end += 1
     return substring_list
 
 
@@ -76,7 +73,7 @@ def find_shortest_substring_with_chars(test_str: str, char_str: str):
     start = 0
     end = 1
     shortest_string = test_str
-    while start < len(test_str) and end <= len(test_str):
+    while start < len(test_str) - len(char_str) and end <= len(test_str):
         sub_str = test_str[start:end]
         print(sub_str)
         if is_chars_in_string(char_str, sub_str):
@@ -84,14 +81,15 @@ def find_shortest_substring_with_chars(test_str: str, char_str: str):
              # print("short string :", shortest_string)
             start += 1
         else:
-            if end == len(test_str):
-                start += 1
-            else:
-                end += 1
+            # if end == len(test_str):
+            #     start += 1
+            # else:
+            #     end += 1
+            end += 1
     print("shortest_string", shortest_string)
 
 
 if __name__ == '__main__':
     # print(find_indices_of_sum(given_arr, 7))
-    # print(find_all_chars_in_string(input_str, match_str))
-    find_shortest_substring_with_chars("asdfsubsdfssdcsbadfsd", match_str)
+    print(find_all_chars_in_string(input_str, match_str))
+    # find_shortest_substring_with_chars("asdfsubsdfssdcsbadfsd", match_str)

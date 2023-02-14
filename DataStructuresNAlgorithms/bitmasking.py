@@ -1,5 +1,8 @@
 """
 Problem 1: Get all substrings in a string including empty string
+
+The effort is by using binary numbers till the length of string to mask characters
+Ex : word is "car" and mask of 5(bin=101) would be "cr"
 """
 from typing import List
 
@@ -25,4 +28,4 @@ class Bitmasking:
         return substr
 
 
-print(Bitmasking.get_all_substrings("abcd"))
+print(Bitmasking.get_all_substrings("abcde"))

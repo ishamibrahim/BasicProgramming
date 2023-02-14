@@ -47,4 +47,4 @@ class Sol:
         return result.strip()
 
 s = Sol()
-print(s.numberToWords(9999999999))
+print(s.numberToWords(9999999))

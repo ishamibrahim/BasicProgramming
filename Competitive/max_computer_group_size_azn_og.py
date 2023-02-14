@@ -3,8 +3,8 @@ Given two integer lists corresponding to the servers numbered on the index
 One list shows  power required for server to boot
 Another list power required during processing
 With the formula given for net_power, group max number of servers to a cluster so that the net_power < max_power
-
 """
+
 
 class Sol:
     @staticmethod

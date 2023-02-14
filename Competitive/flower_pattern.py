@@ -40,7 +40,7 @@ class Sol:
         return flower_pattern + flower_pattern[::-1]
 
 s = Sol()
-final_design = s.make_flower_matrix(1)
+final_design = s.make_flower_matrix(4)
 
 
 print("Final ")

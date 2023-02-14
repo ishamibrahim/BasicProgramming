@@ -1,5 +1,6 @@
 class Sol:
     """
+        Time : 15 mins
         Given the precedence of letters by the pattern "A>B", meaning A comes before B,
         and a list of precedence patterns with unique letters
         Find the word using the precedence patterns.
