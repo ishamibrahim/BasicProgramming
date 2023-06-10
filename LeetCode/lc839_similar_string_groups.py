@@ -1,5 +1,11 @@
 from typing import List
+"""
+https://leetcode.com/problems/similar-string-groups/description/
+Two strings, X and Y, are considered similar if either they are identical or we can make them equivalent by swapping at most two letters (in distinct positions) within the string X.
 
+Solution    -   99.4% in Runtime
+            -   17.78% in Memory
+"""
 
 class Solution:
 
@@ -36,5 +42,4 @@ class Solution:
 
 
 print(Solution().numSimilarGroups(["wwq", "wqw", "qww"]))
-print(2/2)
 

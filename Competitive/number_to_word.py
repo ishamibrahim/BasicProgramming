@@ -7,6 +7,7 @@ TEN_WORDS = {2: "Twenty", 3: "Thirty", 4: "Forty", 5: "Fifty", 6: "Sixty", 7: "S
 
 POLYILLION_NAMES = { 1: "Thousand", 2: "Million", 3: "Billion", 4: "Trillion", 5: "Quadrillion"}
 
+
 class Sol:
     def get_readable_hundred_number(self, number: int) -> str:
         result = ""
@@ -45,6 +46,7 @@ class Sol:
             num = int(num / 1000)
 
         return result.strip()
+
 
 s = Sol()
 print(s.numberToWords(9999999))

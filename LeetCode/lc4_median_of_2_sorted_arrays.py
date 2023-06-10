@@ -1,12 +1,13 @@
 from typing import List
 
+"""
+https://leetcode.com/problems/median-of-two-sorted-arrays/
 
-class Node:
-    def __init__(self, num):
-        self.num = num
-        self.next = next
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 
-
+Solution    -   69.8% in Runtime
+            -   55.1% in Memory
+"""
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
