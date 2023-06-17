@@ -37,7 +37,31 @@ class Solution:
 
         return dp
 
+    def find_recursive_bin(self, dp: List[int], n: int, pow : int, last: int):
+        if n == pow*2:
+            pow *= 2
+        if n == last:
+            return
+        elif n == 1:
+            dp[n] = 1
+        if n == 0:
+            dp[n] = 0
+        else:
+            dp[n] = 1 + dp[n-pow]
+        self.find_recursive_bin(dp, n+1, pow, last)
+
+
+    def neetcode_2(self, n: int) -> List[int]:
+        """
+        This is a recursive approach to the problem
+        """
+
+        dp = [0] * (n+1)
+        self.find_recursive_bin(dp, 1, 1, n+1)
+        return dp
 
 
 
-print(Solution().neetcode(10))
+
+
+print(Solution().neetcode_2(0))
