@@ -19,3 +19,13 @@ class Interval:
 
     def __str__(self):
         return f"{self.start} - {self.end}"
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+        
+
