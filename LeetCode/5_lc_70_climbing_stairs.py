@@ -10,16 +10,14 @@ class Solution:
     total_solutions = 0
     def climb(self, n: int):
         if n == 1:
-            self.total_solutions += 1
+            return 1
         elif n == 2:
-            self.total_solutions += 2
+            return 2
         else:
-            self.climb(n-1)
-            self.climb(n-2)
+            return self.climb(n-1) + self.climb(n-2)
 
     def climbStairs(self, n: int) -> int:
-        self.climb(n)
-        return self.total_solutions
+        return self.climb(n)
 
     def neetcode(self, n: int) -> int:
         first = 1
@@ -32,5 +30,5 @@ class Solution:
 
 
 
-print(Solution().neetcode(50))
+print(Solution().climbStairs(5))
 

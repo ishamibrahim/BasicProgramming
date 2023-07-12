@@ -68,4 +68,4 @@ class Solution:
 
 
 
-print(Solution().findMedianSortedArrays([1,2], [3,4]))
+print(Solution().findMedianSortedArrays([1,2, 3], [3,4]))

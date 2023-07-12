@@ -37,4 +37,4 @@ class NumArray:
 
 n = NumArray([-2,0,3,-5,2,-1])
 print(n.prefix)
-print(n.sumRange(0,2))
+print(n.sumRange(0, 2))

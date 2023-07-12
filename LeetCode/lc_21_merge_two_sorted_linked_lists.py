@@ -12,10 +12,7 @@ Solution    -   51.6% in Runtime
 """
 from typing import Optional
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from LeetCode.constants import ListNode
 
 
 class Solution:
@@ -54,9 +51,12 @@ class Solution:
 l1 = ListNode(2, ListNode(5, ListNode(8)))
 l2 = ListNode(3, ListNode(9))
 result = Solution().mergeTwoLists(l1, l2)
-while result:
-    print(result.val)
-    result = result.next
+result_cp = result
+
+while result_cp:
+    print(result_cp.val)
+    result_cp = result_cp.next
+print (result)
 
 
 
