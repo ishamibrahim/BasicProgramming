@@ -16,5 +16,7 @@ class Solution:
         return list(real_set - set(nums))
 
 
-l1 = [2, 1, 2, 5, 6, 7, 1]
+l1 = [5, 1, 4, 3, 5, 7, 1]
 print(Solution().findDisappearedNumbers(l1))
+l2 = set(l1) - set([5])
+print(l2)
