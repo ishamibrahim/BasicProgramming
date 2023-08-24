@@ -1,6 +1,12 @@
 from typing import List
 
+"""
+Given two strings, return true if both result in the same string
+The strings may have * that represent backspaces.
 
+Ex : a = "*a*cb*", 
+b = "c"
+"""
 class Solution:
     def get_resolved_str(self, a_string: str) -> List[str]:
         results = []
