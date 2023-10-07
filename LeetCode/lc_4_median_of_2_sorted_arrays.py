@@ -37,7 +37,7 @@ class Solution:
         total_len = nums1_len + nums2_len
         mid_len = total_len//2
         even_len = total_len%2 == 0
-        current = previous = median = 0
+        previous = median = 0
         while nums1_p or nums2_p:
             if nums1_p and nums2_p:
                 if nums1[nums1_len - nums1_p] < nums2[nums2_len - nums2_p]:
@@ -68,4 +68,4 @@ class Solution:
 
 
 
-print(Solution().findMedianSortedArrays([1,2, 3], [3,4]))
+print(Solution().findMedianSortedArrays([1,2, 3, 4], [3,4, 9, 11]))

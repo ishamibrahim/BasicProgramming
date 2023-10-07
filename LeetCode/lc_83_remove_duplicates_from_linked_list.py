@@ -26,5 +26,5 @@ class Solution:
 ll = ListNode(6, ListNode(6, ListNode(20, ListNode(45, ListNode(55, ListNode(55))))))
 l2 = ListNode(-1, ListNode(6, ListNode(20, ListNode(20, ListNode(55, ListNode(55))))))
 
-l2 = None
+
 print(Solution().deleteDuplicates(l2))

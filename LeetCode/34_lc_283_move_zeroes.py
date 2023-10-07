@@ -25,6 +25,9 @@ class Solution:
                 fst += 1
 
     def find_0_index_in_list(self, nums, base_ind):
+        """
+
+        """
         base_ind += 1
         while  base_ind < len(nums) and nums[base_ind] != 0:
             base_ind += 1
@@ -47,7 +50,7 @@ class Solution:
         while fst < l_nums and lst < l_nums:
             fst = self.find_0_index_in_list(nums, fst)
             lst = self.find_non_0_index_in_list(nums, fst)
-            if fst < l_nums and lst <l_nums:
+            if fst < l_nums and lst < l_nums:
                 nums[fst], nums[lst] = nums[lst], nums[fst]
 
     def neetCode(self, nums: List[int]) -> None:
@@ -64,10 +67,14 @@ class Solution:
             r += 1
 
 
-
-
-
-
 numss = [0, 1, 0, 3, 12, 0, 25, 0]
+
 Solution().neetCode(numss)
 print(numss)
+
+l = [1, 2, 3]
+print(id(l))
+l.reverse()
+print(id(l))
+print(l)
+

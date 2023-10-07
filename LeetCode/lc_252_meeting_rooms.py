@@ -25,4 +25,4 @@ l2 = [Interval(0, 10), Interval(5, 10), Interval(15, 30)]
 l3 = [Interval(0,8), Interval(10, 15), Interval(15, 20)]
 l4 = [Interval(5, 50)]
 
-print(Solution().can_attend_all_meetins(l4))
+print(Solution().can_attend_all_meetins(l2))

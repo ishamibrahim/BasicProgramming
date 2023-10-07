@@ -8,13 +8,7 @@ Solution    -   11.6% in Runtime
             -   32.4% in Memory
 """
 from typing import Optional, List
-
-
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from constants import ListNode
 
 class Solution:
     def merge(self, list1, list2):
@@ -51,6 +45,4 @@ l1 = ListNode(2, ListNode(5, ListNode(8)))
 l2 = ListNode(3, ListNode(9))
 l3 = ListNode(6, ListNode(6, ListNode(90)))
 result = Solution().mergeKLists([l1, l2, l3])
-while result:
-    print(result.val)
-    result = result.next
+print(result)

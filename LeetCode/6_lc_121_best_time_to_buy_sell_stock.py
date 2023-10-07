@@ -30,4 +30,4 @@ class Solution:
         return maxim
 
 
-print(Solution().maxProfit([9, 0, 1, 5, 3, 6, 4]))
+print(Solution().maxProfit([9, 3, 1, 5, 3, 6, 0, 3]))

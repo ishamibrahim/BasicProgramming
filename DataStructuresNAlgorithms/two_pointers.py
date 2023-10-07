@@ -46,8 +46,8 @@ class Sol:
 
 
 solution = Sol()
-# print(solution.get_two_indices_for_sum(70))
-print(solution.move_all_zeroes_to_the_end([8, 0, 9, 0, 1, 2, 3, 0]))
+print(solution.get_two_indices_for_sum(70))
+# print(solution.move_all_zeroes_to_the_end([8, 0, 9, 0, 1, 2, 3, 0]))
 
 
 

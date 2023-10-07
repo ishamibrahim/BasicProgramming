@@ -13,7 +13,7 @@ from typing import List
 class Solution:
 
     def binary_search(self, letters: List[str], front, back :int, target: str) -> str:
-        if front < back :
+        if front < back:
             mid = (front+back)//2
             if 1 <= mid < len(letters) and letters[mid] > target >= letters[mid - 1]:
                 return letters[mid]
@@ -34,3 +34,4 @@ class Solution:
 
 
 print(Solution().nextGreatestLetter(["c", "f", "j"], "d"))
+
