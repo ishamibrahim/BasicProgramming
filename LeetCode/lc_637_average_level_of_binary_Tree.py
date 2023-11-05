@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 """
 https://leetcode.com/problems/average-of-levels-in-binary-tree
 

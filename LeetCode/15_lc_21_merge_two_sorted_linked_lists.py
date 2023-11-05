@@ -12,7 +12,7 @@ Solution    -   51.6% in Runtime
 """
 from typing import Optional
 
-from LeetCode.constants import ListNode
+from LeetCode.utils import ListNode
 
 
 class Solution:

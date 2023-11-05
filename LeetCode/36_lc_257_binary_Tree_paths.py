@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 """
 --easy--
 Given the root of a binary tree, return all root-to-leaf paths in any order.

@@ -6,7 +6,7 @@ Ex: [(0,10),  (5, 30), (15, 20)] ==> false
 
 """
 from typing import List, Tuple
-from LeetCode.constants import Interval
+from LeetCode.utils import Interval
 
 
 class Solution:

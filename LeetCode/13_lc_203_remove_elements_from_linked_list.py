@@ -1,6 +1,6 @@
 from typing import Optional
 
-from LeetCode.constants import ListNode
+from LeetCode.utils import ListNode
 """
 --easy--
 https://leetcode.com/problems/remove-linked-list-elements

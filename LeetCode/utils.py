@@ -1,3 +1,6 @@
+from typing import List
+
+
 class ListNode:
     def __init__(self, val=0, next_node=None):
         self.val = val
@@ -31,4 +34,6 @@ class TreeNode:
         return f"Node {self.val} -> {self.left.val if self.left  else None} | {self.right.val if self.right else None}"
 
         
-
+def print_matrix(matrix: List[List[int]]):
+    for inner_list in matrix:
+        print(inner_list)

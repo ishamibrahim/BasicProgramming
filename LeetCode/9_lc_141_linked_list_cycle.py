@@ -6,7 +6,7 @@ Given head, the head of a linked list, determine if the linked list has a cycle 
 """
 from typing import Optional
 from datetime import datetime
-from .constants import ListNode
+from .utils import ListNode
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:

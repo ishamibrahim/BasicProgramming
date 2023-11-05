@@ -1,6 +1,6 @@
 from typing import Optional
 
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 """
     https://leetcode.com/problems/path-sum
     Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path 

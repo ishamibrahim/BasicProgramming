@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from LeetCode.constants import ListNode
+from LeetCode.utils import ListNode
 """
 --easy--
 https://leetcode.com/problems/palindrome-linked-list/

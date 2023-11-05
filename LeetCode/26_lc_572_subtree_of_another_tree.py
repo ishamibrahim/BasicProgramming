@@ -1,5 +1,5 @@
 from typing import Optional
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 """
     https://leetcode.com/problems/subtree-of-another-tree
     Given the roots of two binary trees root and subRoot, 

@@ -1,4 +1,4 @@
-from LeetCode.constants import ListNode
+from LeetCode.utils import ListNode
 from typing import Optional
 """
 https://leetcode.com/problems/remove-duplicates-from-sorted-list
@@ -24,7 +24,8 @@ class Solution:
 
 
 ll = ListNode(6, ListNode(6, ListNode(20, ListNode(45, ListNode(55, ListNode(55))))))
-l2 = ListNode(-1, ListNode(6, ListNode(20, ListNode(20, ListNode(55, ListNode(55))))))
+l2 = ListNode(-21, ListNode(6, ListNode(20, ListNode(20, ListNode(55, ListNode(55))))))
 
 
 print(Solution().deleteDuplicates(l2))
+

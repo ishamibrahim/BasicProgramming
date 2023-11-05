@@ -1,5 +1,5 @@
 from typing import Optional
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 
 """
 --easy--

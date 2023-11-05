@@ -8,7 +8,7 @@ Solution    -   11.6% in Runtime
             -   32.4% in Memory
 """
 from typing import Optional, List
-from constants import ListNode
+from utils import ListNode
 
 class Solution:
     def merge(self, list1, list2):

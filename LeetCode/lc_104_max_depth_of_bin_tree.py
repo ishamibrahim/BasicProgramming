@@ -1,6 +1,6 @@
 from typing import Optional
 
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 """
     https://leetcode.com/problems/maximum-depth-of-binary-tree/
     Given the root of a binary tree, return its maximum depth.

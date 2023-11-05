@@ -1,6 +1,6 @@
 from typing import Optional
 
-from LeetCode.constants import TreeNode
+from LeetCode.utils import TreeNode
 """
     https://leetcode.com/problems/same-tree
     Given the roots of two binary trees p and q, write a function to check if they are the same or not.
