@@ -20,7 +20,7 @@ prompt-toolkit==3.0.30
 ptyprocess==0.7.0
 pure-eval==0.2.2
 py==1.11.0
-Pygments==2.12.0
+Pygments==2.15.0
 pyparsing==3.0.6
 pytest==6.2.5
 python-pptx==0.6.21
