@@ -66,15 +66,34 @@ class Solution:
                 nums[l], nums[r] = nums[r], nums[l]
             r += 1
 
+    def moveZeroes3(self, nums: List[int]) -> None:
+        """
+        This solution uses the method used in insertion sort to insert zero by moving everything to the end
+        """
+        front = 0
+        end = len(nums) -1
+        while front < end:
+            if nums[end] == 0:
+                end -= 1
+            elif nums[front] == 0:
+                inc = front
+                while inc < end:
+                    nums[inc] = nums[inc+1]
+                    inc += 1
+                nums[end] = 0
+                front += 1
+            else:
+                front += 1
+
+
+
+
+
+
 
 numss = [0, 1, 0, 3, 12, 0, 25, 0]
 
-Solution().neetCode(numss)
+Solution().moveZeroes3(numss)
 print(numss)
 
-l = [1, 2, 3]
-print(id(l))
-l.reverse()
-print(id(l))
-print(l)
 

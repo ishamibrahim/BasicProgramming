@@ -12,7 +12,6 @@ Solution    -   64.3% in Runtime
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         i = 0
-
         nums.sort()
         result = nums[i]
         while(i < len(nums)-1):

@@ -52,4 +52,4 @@ l1.next = ll.next
 
 s_time = datetime.now()
 print(Solution().hasCycle(ll))
-print("The solution took %s "%(datetime.now()-s_time))
+print("The solution took %s " %(datetime.now()-s_time))

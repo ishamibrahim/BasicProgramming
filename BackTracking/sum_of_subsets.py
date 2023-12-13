@@ -1,8 +1,7 @@
 """
 Find all subsets in a list whose SUM equals given number
 """
-SET_OF_NUMS = [30, 12, 15, 18, 13, 5, 10 ]
-SUM_NUMS = sum(SET_OF_NUMS)
+SET_OF_NUMS = [30, 12, 15, 18, 13, 5, 10]
 LEN_OF_NUMS = len(SET_OF_NUMS)
 final_subset_list = []
 FINAL_SUM = 30

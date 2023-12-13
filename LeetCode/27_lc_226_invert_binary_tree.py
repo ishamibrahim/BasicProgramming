@@ -15,9 +15,9 @@ class Solution:
         if root:
             root.left, root.right = root.right, root.left
             if root.left:
-                self.invertTree(root.left)
+                self.invert(root.left)
             if root.right:
-                self.invertTree(root.right)
+                self.invert(root.right)
 
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         self.invert(root)

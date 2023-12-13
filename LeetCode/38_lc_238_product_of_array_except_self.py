@@ -2,6 +2,7 @@
 --medium--
 Given an integer array nums, return an array answer such that answer[i] is equal to the product of
 all the elements of nums except nums[i].
+WITHOUT USING DIVISION OPERATOR
 """
 import functools
 from typing import List
@@ -40,7 +41,7 @@ class Solution:
         prefix = 1
         l_nums = len(nums)
         for i in range(l_nums):
-            prod_list.append( prefix)
+            prod_list.append(prefix)
             prefix *= nums[i]
         postfix = 1
         for i in range(l_nums-1, -1, -1):
@@ -50,5 +51,7 @@ class Solution:
 
 
 
-print(Solution().productExceptSelf([1, 3, 5, 6, 2]))
+print(Solution().productExceptSelf([4, 3, 5, 6, 2]))
 print(Solution().neetCode([1, 3, 5, 6, 2]))
+print(Solution().productExceptSelf2([1, 3, 5, 6, 2]))
+

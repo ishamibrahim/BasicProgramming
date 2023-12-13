@@ -32,12 +32,12 @@ class Solution:
         return llist.next
 
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        llist = None
+        final_list = None
         if lists:
-            llist = lists[0]
+            final_list = lists[0]
             for i in range(1, len(lists)):
-                llist = self.merge(llist, lists[i])
-        return llist
+                final_list = self.merge(final_list, lists[i])
+        return final_list
 
 
 

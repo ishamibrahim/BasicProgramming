@@ -31,8 +31,7 @@ class Solution:
                     matrix[i][j] = 0
         if zero_y_positions:
             for i in zero_y_positions:
-                for j in range(len_x):
-                    matrix[i][j] = 0
+                matrix[i] = [0] * len(matrix[0])
 matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 Solution().setZeroes(matrix)
 print(matrix)

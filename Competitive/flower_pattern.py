@@ -13,7 +13,6 @@ Ex2:
               C B B B B C
               C C C C C C
 
-
 """
 
 class Sol:

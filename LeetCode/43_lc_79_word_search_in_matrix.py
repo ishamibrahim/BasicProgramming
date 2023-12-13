@@ -58,5 +58,5 @@ class Solution:
 board = [["A","B","C","E"],
         ["S","F","C","S"],
         ["A","D","E","E"]]
-word = "ASAD"
+word = "ABFD"
 print(Solution().exist(board, word))

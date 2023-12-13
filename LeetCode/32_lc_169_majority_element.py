@@ -10,8 +10,8 @@ class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         """
         The solution uses an approach that works with O(1) space complexity
-        It takes two variables and increments or decrements based on an element occurence
-        If the count goes below 0 it replaces with the new element
+        It takes two variables and increments or decrements based on an element occurrence
+        If the count goes below 0 it replaces with the new Booyer moore
         This is called the Booyer moore algorithm. This only works if the majority element occurs more than n/2 times
 
         Solution:   runtime : 92%

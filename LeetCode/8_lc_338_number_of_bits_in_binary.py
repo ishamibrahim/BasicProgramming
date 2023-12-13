@@ -11,7 +11,7 @@ Solution -  Runtime : 6.9%
 
 """
 class Solution:
-    def calculate_bits(self, n:int) -> int:
+    def calculate_bits(self, n: int) -> int:
         count = 0
         for i in range(int(math.log(n, 2))+1):
             d = 1 << i
@@ -37,18 +37,18 @@ class Solution:
 
         return dp
 
-    def find_recursive_bin(self, dp: List[int], n: int, pow : int, last: int):
-        if n == pow*2:
+    def find_recursive_bin(self, dp: List[int], i: int, pow : int, last: int):
+        if i == pow*2:
             pow *= 2
-        if n == last:
+        if i == last:
             return
-        elif n == 1:
-            dp[n] = 1
-        if n == 0:
-            dp[n] = 0
+        elif i == 1:
+            dp[i] = 1
+        if i == 0:
+            dp[i] = 0
         else:
-            dp[n] = 1 + dp[n-pow]
-        self.find_recursive_bin(dp, n+1, pow, last)
+            dp[i] = 1 + dp[i-pow]
+        self.find_recursive_bin(dp, i+1, pow, last)
 
 
     def neetcode_2(self, n: int) -> List[int]:
@@ -59,9 +59,6 @@ class Solution:
         dp = [0] * (n+1)
         self.find_recursive_bin(dp, 1, 1, n+1)
         return dp
-
-
-
 
 
 print(Solution().neetcode_2(0))

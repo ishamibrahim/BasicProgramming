@@ -55,7 +55,7 @@ ll = ListNode(6, ListNode(6, ListNode(90, ListNode(45, ListNode(55, ListNode(21)
 l1 = ListNode(6, ListNode(5, ListNode(5, ListNode(6))))
 l2 = ListNode(3, ListNode(4))
 s_time = datetime.now()
-print(Solution().isPalindrome(l2))
+print(Solution().isPalindrome(l1))
 print("The solution took %s "%(datetime.now()-s_time))
 
 

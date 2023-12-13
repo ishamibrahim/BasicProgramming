@@ -30,6 +30,7 @@ def is_word_in_list(word, word_list):
 # A recursive function to generate all possible words in a boggle
 def search_path_on_board(marked_locations, board, words, i, j, path=''):
     path += board[i][j]
+    print(path)
     if is_word_in_list(path, words):
         marked_locations[i][j] = True
         if path in words:

@@ -12,7 +12,7 @@ class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         """
         This solution uses two parts
-        1st parts finds the closes number to 0 hsingbinary search
+        1st parts finds the closes number to 0 using binary search
         2nd part uses front and back pointer to traverse through the list with pointers moving forward and backward respectively
 
         Solution -  Rumtime: 30.6%

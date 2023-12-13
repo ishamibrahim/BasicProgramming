@@ -8,9 +8,9 @@ class Sol:
 
     def get_starting_letter(self, prec_list):
         starting_letter = ""
+        temp = [x[2:] for x in prec_list]
         for prec in prec_list:
             starting_letter = prec[0]
-            temp = [x[2:] for x in prec_list]
             if starting_letter not in temp:
                 break
         return starting_letter

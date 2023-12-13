@@ -24,4 +24,4 @@ class Sol:
         return result_count_list
 
 s = Sol()
-print(s.number_of_items("*|***|*|**|*****", [1,1], [4, 6]))
+print(s.number_of_items("*|***|*|**|*****", [1,1], [4, 9]))

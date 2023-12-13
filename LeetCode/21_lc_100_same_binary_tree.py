@@ -43,10 +43,10 @@ class Solution:
         """
         if p and q:
             return self.check_tree_recursively(p, q)
-        elif (p or q):
-            return False
-        else:
+        elif not (p or q):
             return True
+        else:
+            return False
 
 
 tree1 = TreeNode(1, TreeNode(2, TreeNode(4, TreeNode(8)), TreeNode(5)), TreeNode(3, None, TreeNode(7)))

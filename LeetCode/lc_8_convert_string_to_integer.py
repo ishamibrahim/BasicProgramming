@@ -8,7 +8,7 @@ Solution    -   54.7% in Runtime
 """
 class Solution:
     def myAtoi(self, s: str) -> int:
-        result= re.search("^([\s]*[\-|\+]?[0-9]+)", s)
+        result = re.search("^([\s]*[\-|\+]?[0-9]+)", s)
         if result:
             result = int(result.group(0).strip())
         else:
