@@ -20,7 +20,7 @@ class Sol:
         len1 = len(str_num1)
         len2 = len(str_num2)
 
-        max_len = max([len1, len2])
+        max_len = max(len1, len2)
         position_counter = 1
         carriage = 0
 

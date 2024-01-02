@@ -1,7 +1,17 @@
 import pdb
+from typing import List
 
 UNSORTED_ARR = [17, 63, 3, 99, 55, 32, 56, 22]
+#======================== BUBBLE SORT ===================================
 
+def bubble_Sort(unsorted_arr: List[int]):
+    len_arr = len(unsorted_arr)
+    for i in range(len_arr-1):
+        for j in range(len_arr - i-1):
+            if unsorted_arr[j] > unsorted_arr[j+1]:
+                unsorted_arr[j], unsorted_arr[j+1] = unsorted_arr[j+1], unsorted_arr[j]
+        print(unsorted_arr)
+    print(unsorted_arr)
 
 # =====================INSERTION SORT====================================
 
@@ -131,14 +141,13 @@ def quick_sort(unsorted_arr):
 
 
 def swap(ind1, ind2, arr):
-    temp = arr[ind1]
-    arr[ind1] = arr[ind2]
-    arr[ind2] = temp
+    arr[ind1], arr[ind2] = arr[ind2], arr[ind1]
 
 def quick_sort_2(low, high, unsorted_arr):
     if low < high:
         front = low
         back = low-1
+        pivot = high
         piv = unsorted_arr[high]
         while front < high:
             if unsorted_arr[front] < piv:
@@ -146,7 +155,7 @@ def quick_sort_2(low, high, unsorted_arr):
                 swap(back, front, unsorted_arr)
             front += 1
         back += 1
-        swap(back, high, unsorted_arr)
+        swap(back, pivot, unsorted_arr)
         quick_sort_2(low, back-1, unsorted_arr)
         quick_sort_2(back+1, high, unsorted_arr)
 
@@ -156,12 +165,12 @@ def create_min_heap(unsorted_arr):
     for i in unsorted_arr[1:]:
         min_heap.append(i)
         last_sorted_elem_index = len(min_heap) -1
-        last_sorted_parent_index = int(last_sorted_elem_index/2)
+        last_sorted_parent_index = last_sorted_elem_index//2
         while last_sorted_parent_index > 0:
             if min_heap[last_sorted_elem_index] < min_heap[last_sorted_parent_index]:
                 swap(last_sorted_parent_index, last_sorted_elem_index, min_heap)
             last_sorted_elem_index = last_sorted_parent_index
-            last_sorted_parent_index = int(last_sorted_elem_index/2)
+            last_sorted_parent_index = last_sorted_elem_index//2
     return min_heap
 
 
@@ -173,12 +182,11 @@ def heapify(min_heap):
         elem_index = 1
 
         if len(min_heap) > elem_index*2:
-            first_child_index = elem_index * 2
-            while elem_index * 2 + 1 <= len(min_heap):
+            while (elem_index * 2) + 1 <= len(min_heap):
                 if len(min_heap) == elem_index * 2 + 1:
                     first_child_index = elem_index * 2
                 else:
-                    first_child_index = elem_index*2 if min_heap[elem_index*2] < min_heap[elem_index*2+1] else elem_index*2+1
+                    first_child_index = elem_index*2 if min_heap[elem_index*2] < min_heap[(elem_index*2)+1] else elem_index*2+1
 
                 if min_heap[elem_index] > min_heap[first_child_index]:
                     swap(elem_index, first_child_index, min_heap)

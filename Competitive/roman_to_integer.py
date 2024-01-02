@@ -86,5 +86,5 @@ class Sol:
 
 
 sol = Sol()
-print(sol.intToRoman(1994))
+print(sol.intToRoman(3249))
 print(sol.romanToInteger("MCMXCIV"))

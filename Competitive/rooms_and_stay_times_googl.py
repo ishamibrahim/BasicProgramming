@@ -14,25 +14,28 @@ class Room:
     def __init__(self):
         self.end_time
 
+def main():
+    for customer in customer_list:
+        start_time, duration = customer
+        room_found = False
 
-for customer in customer_list:
-    start_time, duration = customer
-    room_found = False
+        for room_no in range(len(room_list)):
+            if room_list[room_no] < start_time:
+                room_list[room_no] = start_time + duration
+                occupied_list[room_no] += 1
+                room_found = True
+                break
 
-    for room_no in range(len(room_list)):
-        if room_list[room_no] < start_time:
-            room_list[room_no] = start_time + duration
-            occupied_list[room_no] += 1
-            room_found = True
-            break
+        if not room_found:
+            room_list.append(start_time + duration)
+            occupied_list.append(1)
+    ocupied_max_count = max(occupied_list)
+    occupied_max_room = occupied_list.index(ocupied_max_count)
 
-    if not room_found:
-        room_list.append(start_time + duration)
-        occupied_list.append(1)
-ocupied_max_count = max(occupied_list)
-occupied_max_room = occupied_list.index(ocupied_max_count)
+    print(ocupied_max_count, occupied_max_room)
 
-print(ocupied_max_count, occupied_max_room)
+if __name__ == '__main__':
+    main()
 
 
 

@@ -38,6 +38,25 @@ class Sol:
             flower_pattern.append(self.get_pattern_for_flower(f_type, flower_types))
         return flower_pattern + flower_pattern[::-1]
 
+
+def drawflower_of_size(fsize):
+    count  = 0
+    word_num = 65
+    letter_matrix = []
+    for i in range(fsize):
+        inner_matrix = []
+        for j in range(fsize):
+            if j < count:
+                inner_matrix.append(chr(word_num+count))
+            else:
+                inner_matrix.append(chr(word_num + j))
+        count += 1
+        letter_matrix.append(inner_matrix)
+    for index in range(len(letter_matrix)):
+        letter_matrix[index] = letter_matrix[index][::-1] + letter_matrix[index]
+
+    return letter_matrix[::-1] + letter_matrix
+
 s = Sol()
 final_design = s.make_flower_matrix(4)
 

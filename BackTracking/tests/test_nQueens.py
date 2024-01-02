@@ -17,5 +17,6 @@ class TestnQueens(unittest.TestCase):
         self.assertIs(is_queen_safe(2, 1), False)
 
 
+
 if __name__ =="__main__":
     unittest.main()
