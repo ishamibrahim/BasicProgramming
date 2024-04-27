@@ -41,7 +41,7 @@ class Sol:
 
 def drawflower_of_size(fsize):
     count  = 0
-    word_num = 65
+    word_num = 35
     letter_matrix = []
     for i in range(fsize):
         inner_matrix = []
@@ -57,8 +57,9 @@ def drawflower_of_size(fsize):
 
     return letter_matrix[::-1] + letter_matrix
 
+
 s = Sol()
-final_design = s.make_flower_matrix(4)
+final_design = drawflower_of_size(10)
 
 
 print("Final ")

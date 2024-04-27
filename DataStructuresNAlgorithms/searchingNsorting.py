@@ -4,7 +4,7 @@ from typing import List
 UNSORTED_ARR = [17, 63, 3, 99, 55, 32, 56, 22]
 #======================== BUBBLE SORT ===================================
 
-def bubble_Sort(unsorted_arr: List[int]):
+def bubble_sort(unsorted_arr: List[int]):
     len_arr = len(unsorted_arr)
     for i in range(len_arr-1):
         for j in range(len_arr - i-1):
@@ -37,19 +37,18 @@ def selection_sort(unsorted_arr):
     len_arr = len(unsorted_arr)
 
     for i in range(len_arr - 1):
-        ex_index = pivot
-        ex = None
+        smallest_ind = pivot
+        found = False
         for count in range(pivot, len_arr):
-            if unsorted_arr[ex_index] > unsorted_arr[count]:
-                ex_index = count
-                ex = True
-        if ex:
+            if unsorted_arr[smallest_ind] > unsorted_arr[count]:
+                smallest_ind = count
+                found = True
+        if found:
             # Swapping
-            unsorted_arr[ex_index], unsorted_arr[pivot] = unsorted_arr[pivot], unsorted_arr[ex_index]
-            # swap(ex_index, pivot, unsorted_arr)
+            unsorted_arr[smallest_ind], unsorted_arr[pivot] = unsorted_arr[pivot], unsorted_arr[smallest_ind]
         pivot += 1
 
-    print (unsorted_arr)
+    print(unsorted_arr)
 
 
 # =====================BINARY SEARCH=====================================

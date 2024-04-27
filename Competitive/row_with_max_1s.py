@@ -9,9 +9,8 @@ Input :[[0 0 0 1 1 1]
 Output : 3
 
 """
-
+import time
 from typing import List
-
 
 
 class Sol:
@@ -19,12 +18,12 @@ class Sol:
 
     def binary_search_for_first_1(self, row):
         f = 0
-        l =len(row) - 1
+        l = len(row) - 1
         while True:
-            mid = int((f +l) /2)
+            mid = int((f + l) / 2)
             if row[mid]:
-                if mid > 0 :
-                    if not row[mid-1]:
+                if mid > 0:
+                    if not row[mid - 1]:
                         return mid
                     else:
                         l = mid - 1
@@ -43,9 +42,9 @@ class Sol:
             if row_start_index < least_occuring_ind:
                 least_occuring_ind = row_start_index
                 least_occuring_row = in_matrix.index(row)
-        print(f"Row no. {least_occuring_row} occurs with maximum 1s of count {len_row-least_occuring_ind}")
+        print(f"Row no. {least_occuring_row} occurs with maximum 1s of count {len_row - least_occuring_ind}")
 
-################################################### SECOND ########################################
+    ################################################### SECOND ########################################
     def find_max_rows_with_bin_search_pattern(self, in_matrix: List[List[int]]):
         len_matrix = len(in_matrix)
         len_row = len(in_matrix[0])
@@ -77,19 +76,18 @@ class Sol:
                     if not val:
                         removable_keys.append(key)
                 for key in removable_keys:
-                    del(current_matrix_dict[key])
+                    del (current_matrix_dict[key])
 
         print(current_matrix_dict.items())
 
 
-
-binary_matrix = [   [0, 0, 0, 0, 1, 1, 1],
-                    [0, 0, 1, 1, 1, 1, 1],
-                    [0, 0, 0, 1, 1, 1, 1],
-                    [0, 0, 0, 0, 0, 0, 1]]
+binary_matrix = [[0, 0, 0, 0, 1, 1, 1],
+                 [0, 0, 1, 1, 1, 1, 1],
+                 [0, 0, 0, 1, 1, 1, 1],
+                 [0, 1, 1, 1, 1, 1, 1]]
 s = Sol()
+start = time.perf_counter()
 # s.find_max_in_row(binary_matrix)
+
 s.find_max_rows_with_bin_search_pattern(binary_matrix)
-
-
-
+print(f"time taken: {(time.perf_counter() - start):0.7f}")
