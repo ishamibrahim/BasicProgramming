@@ -81,10 +81,6 @@ def find_shortest_substring_with_chars(test_str: str, char_str: str):
              # print("short string :", shortest_string)
             start += 1
         else:
-            # if end == len(test_str):
-            #     start += 1
-            # else:
-            #     end += 1
             end += 1
     print("shortest_string", shortest_string)
 

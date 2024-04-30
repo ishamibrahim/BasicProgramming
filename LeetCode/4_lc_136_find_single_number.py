@@ -4,7 +4,6 @@ from typing import List
 https://leetcode.com/problems/single-number
 Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 
-Solution:
 Solution    -   64.3% in Runtime
             -   75.5% in Memory
 

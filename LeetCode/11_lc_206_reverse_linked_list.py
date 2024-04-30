@@ -17,7 +17,7 @@ class Solution:
         Solution -  Runtime 61%
                     Memory - 9.5%
         """
-        # In case head is None, then return None; Used DeMorgan's law
+        # In case head is None, then return None;
         if not (head and head.next):
             return head
         n = head.next

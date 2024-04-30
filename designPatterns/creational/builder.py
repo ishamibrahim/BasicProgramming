@@ -69,5 +69,5 @@ build = CartBuilder()
 director = Director(build)
 director.construct_car()
 mycar = director.get_car()
-print (mycar)
+print(mycar)
 

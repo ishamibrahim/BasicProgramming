@@ -8,10 +8,10 @@ from typing import List
 class Sol:
     list_a = [10, 20, 35, 50, 75, 80]
 
+    """
+        Problem: Find two indices where the sum two items in a sorted list is equal to certain value
+    """
     def get_two_indices_for_sum(self, sum_to_find):
-        """
-            Problem: Find two indices where the sum two items in the list is equal to certain value
-        """
         len_list = len(self.list_a)
         left = 0
         right = len_list-1

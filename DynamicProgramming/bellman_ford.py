@@ -42,7 +42,7 @@ def bellman_ford_method(in_g, src_vertex):
     last_shortest_path_to_vertices = []
     redoing_graph_count = 0
 
-    while redoing_graph_count < in_g.v -1:
+    while redoing_graph_count < in_g.v-1:
         for current_vertx in range(in_g.v):
             find_shortest_path_to_vertex(current_vertx, in_g, shortest_path_to_vertices)
         print(shortest_path_to_vertices)

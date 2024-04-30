@@ -18,7 +18,7 @@ class Arabian:
         self.name = type(self).__name__
 
     def speak_arabic(self):
-        return "Asslamau alaikum Habeebi"
+        return "Assalamu alaikum Habeebi"
 
 
 class Adapter:

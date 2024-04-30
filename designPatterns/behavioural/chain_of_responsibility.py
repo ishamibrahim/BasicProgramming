@@ -17,7 +17,7 @@ class Handler(object):
 
     def _handle(self, request):
 
-        raise NotImplementedError("The parent handle hasnt been defined yet")
+        raise NotImplementedError("The parent handle hasn't been defined yet")
 
 
 class SubHandler(Handler):
@@ -72,7 +72,7 @@ class Car(object):
         if self.water >= 20 and self.fuel > 5 and self.oil > 50:
             print("Car has good essential liquid levels")
             return True
-        else :
+        else:
             return False
 
 class Handler:

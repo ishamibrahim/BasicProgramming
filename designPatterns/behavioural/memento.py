@@ -1,7 +1,7 @@
 import copy
 
 """
-In this patter a Memento stores an objects state. It canbe used to roll back an object to a previous state
+In this patter a Memento stores an objects state. It can be used to roll back an object to a previous state
 """
 
 

@@ -27,7 +27,7 @@ class Solution:
             Runtime : 95%
             Memory: 15%
         """
-        integer_dict = {i:True for i in range(1, len(nums)+1)}
+        integer_dict = {i: True for i in range(1, len(nums)+1)}
         for num in nums:
             if integer_dict.get(num, None):
                 integer_dict.pop(num)
