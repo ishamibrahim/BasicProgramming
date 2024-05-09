@@ -22,7 +22,7 @@ class Solution:
                 return self.has_sum_in_node(node.left, target, current_sum) or self.has_sum_in_node(node.right, target, current_sum)
             if node.left:
                 return self.has_sum_in_node(node.left, target, current_sum)
-            if node.right:
+            elif node.right:
                 return self.has_sum_in_node(node.right, target, current_sum)
             return False
         else:
@@ -46,4 +46,4 @@ tree1 = TreeNode(1,
 tree2 = TreeNode(-2,
                  None,
                  TreeNode(-3))
-print(Solution().hasPathSum(tree2, -5))
+print(Solution().hasPathSum(tree1, 8))

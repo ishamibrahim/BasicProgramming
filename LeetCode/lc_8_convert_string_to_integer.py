@@ -1,6 +1,8 @@
 import re
 
 """
+--medium--
+https://leetcode.com/problems/string-to-integer-atoi/description/
 Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer 
 
 Solution    -   54.7% in Runtime

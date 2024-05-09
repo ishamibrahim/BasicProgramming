@@ -37,8 +37,11 @@ class Solution:
 
 tree1 = TreeNode(1,
                  TreeNode(3,
-                          TreeNode(5)),
-                 TreeNode(2)
+                          TreeNode(5)
+                          ),
+                 TreeNode(2,
+                          TreeNode(6)
+                          )
                  )
 tree2 = TreeNode(2,
                  TreeNode(1,

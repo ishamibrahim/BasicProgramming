@@ -30,7 +30,14 @@ class Solution:
 tree1 = TreeNode(1,
                  TreeNode(2,
                           TreeNode(4,
-                                   TreeNode(8)
+                                   TreeNode(8,
+                                            TreeNode(9,
+                                                     TreeNode(10,
+                                                              None,
+                                                              TreeNode(11,
+                                                                       None,
+                                                                       TreeNode(12))))),
+                                   TreeNode(13)
                                    ),
                           TreeNode(5)
                           ),

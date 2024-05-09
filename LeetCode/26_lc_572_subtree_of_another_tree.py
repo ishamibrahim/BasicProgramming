@@ -22,15 +22,17 @@ class Solution:
             return False
 
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        if self.is_identical_tree(root, subRoot):
-            return True
-        elif root and (root.left or root.right):
-            if root.left and root.right:
-                return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-            elif root.right:
-                return self.isSubtree(root.right, subRoot)
-            else:
-                return self.isSubtree(root.left, subRoot)
+        if root:
+            if root.val == subRoot.val:
+                if self.is_identical_tree(root, subRoot):
+                    return True
+            elif (root.left or root.right):
+                if root.left and root.right:
+                    return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+                elif root.right:
+                    return self.isSubtree(root.right, subRoot)
+                else:
+                    return self.isSubtree(root.left, subRoot)
         else:
             return False
 

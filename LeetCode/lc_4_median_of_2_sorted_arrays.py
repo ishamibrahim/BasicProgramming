@@ -12,24 +12,6 @@ Solution    -   69.8% in Runtime
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
 
-        # totals = []
-        # while nums1 or nums2:
-        #     if nums1 and nums2:
-        #         if nums1[0] < nums2[0]:
-        #             totals.append(nums1.pop(0))
-        #         else:
-        #             totals.append(nums2.pop(0))
-        #     elif nums1:
-        #         totals.append(nums1.pop(0))
-        #     else:
-        #         totals.append(nums2.pop(0))
-        # len_totals = len(totals)
-        # if len_totals%2 != 0:
-        #     median = float(totals[len_totals//2])
-        # else:
-        #     median = (totals[len_totals//2] + totals[(len_totals//2)-1])/2
-        # return median
-
 
         count = 0
         nums1_len = nums1_p = len(nums1)

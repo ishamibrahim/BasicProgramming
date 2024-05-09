@@ -29,10 +29,7 @@ class Solution:
             elif not (node1.right or node2.right):
                 right_tree_same = True
 
-            if left_tree_same and right_tree_same:
-                return True
-            else:
-                return False
+            return left_tree_same and right_tree_same
         else:
             return False
 
@@ -49,7 +46,7 @@ class Solution:
             return False
 
 
-tree1 = TreeNode(1, TreeNode(2, TreeNode(4, TreeNode(8)), TreeNode(5)), TreeNode(3, None, TreeNode(7)))
+tree1 = TreeNode(1, TreeNode(2, TreeNode(4, TreeNode(8)), TreeNode(8)), TreeNode(3, None, TreeNode(7)))
 tree2 = TreeNode(1, TreeNode(2, TreeNode(4, TreeNode(8)), TreeNode(5)), TreeNode(3, None, TreeNode(7)))
 
 

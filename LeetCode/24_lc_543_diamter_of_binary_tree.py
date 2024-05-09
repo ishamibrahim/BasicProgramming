@@ -18,7 +18,7 @@ class Solution:
             left_depth = self.find_max_depth(node.left)
             right_depth = self.find_max_depth(node.right)
             self.max_diameter = max(self.max_diameter, left_depth + right_depth + 2)
-            return  max(left_depth+1 , right_depth+1 )
+            return max(left_depth+1, right_depth+1)
         if node.left:
             left_depth = self.find_max_depth(node.left)
 
@@ -40,9 +40,19 @@ class Solution:
 tree1 = TreeNode(1,
                  TreeNode(2,
                           TreeNode(4,
-                                   TreeNode(8)
+                                   TreeNode(8,
+                                            TreeNode(9))
                                    ),
-                          TreeNode(5)
+                          TreeNode(5,
+                                   None,
+                                   TreeNode(6,
+                                            None,
+                                            TreeNode(7,
+                                                     None,
+                                                     TreeNode(10)
+                                                     )
+                                            )
+                                   )
                           ),
                  TreeNode(3,
                           None,

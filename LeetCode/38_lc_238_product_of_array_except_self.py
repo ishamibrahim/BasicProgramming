@@ -1,6 +1,6 @@
 """
 --medium--
-Given an integer array nums, return an array answer such that answer[i] is equal to the product of
+Given an integer array nums, return an array 'answer' such that answer[i] is equal to the product of
 all the elements of nums except nums[i].
 WITHOUT USING DIVISION OPERATOR
 """
@@ -53,5 +53,4 @@ class Solution:
 
 print(Solution().productExceptSelf([4, 3, 5, 6, 2]))
 print(Solution().neetCode([1, 3, 5, 6, 2]))
-print(Solution().productExceptSelf2([1, 3, 5, 6, 2]))
 
