@@ -72,7 +72,7 @@ async def main2(*args):
 if __name__ == "__main__":
     import sys
     random.seed(555)
-    args = [1, 2, 3] if len(sys.argv) == 1 else map(int, sys.argv[1:])
+    args = [4, 8, 12] if len(sys.argv) == 1 else map(int, sys.argv[1:])
     start = time.perf_counter()
     asyncio.run(main2(*args))
     end = time.perf_counter() - start

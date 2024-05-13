@@ -9,8 +9,8 @@
                  XORing 3 XOR 1 XOR 3 XOR 0 = 1 == k
                  Hence minimum 2 flips required
 
-    Solution:   Runtime  - 78%
-                Memory -   82%
+    Solution:   Runtime - 71%
+                Memory  - 82%
 """
 
 from typing import List
@@ -26,9 +26,9 @@ class Solution:
         count = 0
         for i in range(max(Solution.get_binary_len(result), Solution.get_binary_len(k))):
             comparator = 1 << i
-            if (comparator & result) == 0 and (comparator & k) != 0:
+            if not(comparator & result) and (comparator & k):
                 count += 1
-            if (comparator & result) != 0 and (comparator & k) == 0:
+            if (comparator & result) and not (comparator & k):
                 count += 1
         return count
 

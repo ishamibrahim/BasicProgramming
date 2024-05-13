@@ -22,8 +22,10 @@ class Solution:
             nonlocal done
             index_str = strs[index]
             for i in range(len_strs):
+
                 if not done[i]:
                     delta = 0
+
                     for a, b in zip(index_str, strs[i]):
                         if a != b:
                             delta += 1
@@ -33,6 +35,7 @@ class Solution:
                         match_count += 1
                         done[i] = True
                         find_matching(i)
+                print(done)
 
         for i in range(len(strs)):
             if not done[i]:
@@ -41,5 +44,5 @@ class Solution:
         return len_strs - match_count
 
 
-print(Solution().numSimilarGroups(["tars","rats","arts","star"]))
 
+print(Solution().numSimilarGroups(["tars", "rats", "arts", "star", "srat", "sart"]))
