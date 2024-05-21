@@ -119,10 +119,12 @@ def check_for_bst(node, result, last_parsed):
 
 
 # Testing if an array in a binary serach tree
-any_tree = BinTree()
-any_tree.create_bin_tree_from_list(any_tree.root_node, 1, bin_tree_list)
-any_tree.print_tree()
-print(check_binary_search_tree(any_tree.root_node))
+if __name__ == "__main__":
+
+    any_tree = BinTree()
+    any_tree.create_bin_tree_from_list(any_tree.root_node, 1, bin_tree_list)
+    any_tree.print_tree()
+    print(check_binary_search_tree(any_tree.root_node))
 
 
 # Creating binary search tree

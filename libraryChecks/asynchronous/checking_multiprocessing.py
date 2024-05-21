@@ -1,4 +1,5 @@
 import multiprocessing
+import os
 from multiprocessing import cpu_count
 import time
 a = [3, 4, 5, 7]
@@ -12,9 +13,10 @@ def call_for_loop():
     return count
 
 def print_squares(a):
-    print(pow(a, 2))
+
+    print(f": {a} - {pow(a, 2)}", f"worked on my {os.getpid()}")
     call_for_loop()
-    print(pow(a, 2))
+
 
 
 def main1():
@@ -75,7 +77,7 @@ def main3():
         p2.join()
         print(mylist)
 
-################################# using queue ################################
+################################# passing data using queue ################################
 
 
 def add_items_to_queue(mylist, q_obj):
@@ -102,7 +104,7 @@ def main4():
     p2.join()
 
 
-##########################33 Using pipe ################################
+##########################Passing data Using pipe ################################
 def send_counters(conn, number_list):
     print("Starting to send numbers")
 
@@ -138,6 +140,44 @@ def main5():
     p1.join()
     p2.join()
 
-main5()
+######################################## Using locking to avoid race condition on shared memory ##############################
+# Lock has to be released be one process before being acuired by another. Check without using locks and see that the values are random
+def deposit(balance, loc):
+    for i in range(10000):
+        loc.acquire()
+        balance.value += 1
+        loc.release()
+def withdraw(balance, loc):
+    for i in range(10000):
+        loc.acquire()
+        balance.value -= 1
+        loc.release()
+
+def perform_transactions():
+    balanc = multiprocessing.Value('i', 100)
+    loc = multiprocessing.Lock()
+
+    p1 = multiprocessing.Process(target=deposit, args = (balanc, loc))
+    p2 = multiprocessing.Process(target=withdraw, args = (balanc, loc))
+
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    print("balace value", balanc.value)
+
+def main6():
+    for i in range(10):
+        perform_transactions()
+    print("Done")
+
+################################## Using pools to distribute workloads for processes #########################
+# pooling makes sure each task is taken by individual processes from a pool of workers  at the same time.
+def main7():
+    single_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    p = multiprocessing.Pool()
+    p.map(print_squares, single_list)
+
+main7()
 
 

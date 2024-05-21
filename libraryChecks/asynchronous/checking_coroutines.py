@@ -41,13 +41,14 @@ def print_token():
     except GeneratorExit:
         print("Done with printing!")
 
-
+print("call 1")
 pt = print_token()  # Won't do anything until __next__() is called
-
+print("call 2")
 pt.__next__()  # Will execute and wait for yield statement to execute
-
+print("call 3")
 pf = pattern_filter(next_coroutine=pt)
-
+print("call 4")
 pf.__next__()
-
-producer("The wyoming dependency isn't very amusing", pf)
+print("call 5")
+producer("The wyoming dependency isn't very amusing", next_coroutine=pf)
+print("call 6")

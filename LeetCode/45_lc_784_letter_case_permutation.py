@@ -1,6 +1,7 @@
 from typing import List
 """
     --medium--
+    https://leetcode.com/problems/letter-case-permutation
     Given a string s, you can transform every letter individually to be lowercase or uppercase to create another string.
     Ex : 'a1b2'
         Output : ["a1b2","a1B2","A1b2","A1B2"] - in any order
