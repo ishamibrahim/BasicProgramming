@@ -49,6 +49,15 @@ class Solution:
                 nums.remove(count)
             except Exception as e:
                 return count
+    def missing_number_4(self, nums: List[int])-> int:
+        """
+            Compars sum of nums and sum of range(nums)
+            Runtime: 90%
+            Memory: 32%
+        """
+        total = sum(nums)
+        og_total = sum(range(len(nums)+1))
+        return og_total - total
 
     def neetcode(self, nums: List[int]) -> int:
         """

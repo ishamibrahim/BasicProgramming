@@ -39,9 +39,9 @@ def selection_sort(unsorted_arr):
     for i in range(len_arr - 1):
         smallest_ind = pivot
         found = False
-        for count in range(pivot, len_arr):
-            if unsorted_arr[smallest_ind] > unsorted_arr[count]:
-                smallest_ind = count
+        for small_ind in range(pivot, len_arr):
+            if unsorted_arr[smallest_ind] > unsorted_arr[small_ind]:
+                smallest_ind = small_ind
                 found = True
         if found:
             # Swapping

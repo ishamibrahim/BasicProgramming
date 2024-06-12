@@ -1,5 +1,6 @@
 import itertools
 """
+https://leetcode.com/problems/longest-common-subsequence
 Given two strings text1 and text2, return the length of their longest common subsequence. If there is no common subsequence, return 0.
 Example 1:
 
@@ -13,7 +14,7 @@ Explanation: The longest common subsequence is "ace" and its length is 3.
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         """
-            Solution is from neetcode, it creates a 2D matrix of incremental values from bottom up
+            Solution is from neetcode, uses dynamic programming, it creates a 2D matrix of incremental values from bottom up
             If both letters match, the value is incremented one from its diagonal cell.
             Hence, matrix[i][j] = 1 + matrix[i+1][j+1]
             Otherwise duplicates will be considered

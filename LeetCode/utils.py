@@ -15,6 +15,21 @@ class ListNode:
         return result
 
 
+class DoublyListNode:
+    def __init__(self, val=0, next_node=None, previous_node=None):
+        self.val = val
+        self.next = next_node
+        self.previous = previous_node
+
+    def __repr__(self):
+        this = self
+        result = ""
+        while this !=None:
+            result += "{}->".format(this.val)
+            this = this.next
+        return result
+
+
 class Interval:
     def __init__(self, start, end):
         self.start = start

@@ -34,7 +34,7 @@ class Solution:
 
         return list(integer_dict.keys())
 
-    def  neetcode(self, nums: List[int]) -> List[int]:
+    def neetcode(self, nums: List[int]) -> List[int]:
         """
             This uses O(1) space since it does not create a new space.
             Here numbers corresponding to their respective -1 locations are negated, which means positions related to missing numbers remain positive
@@ -52,6 +52,6 @@ class Solution:
                 result.append(i+1)
         return result
 
-l1 = [5, 1, 4, 3, 1]
+l1 = [ 1, 4, 3, 1, 3]
 print(Solution().neetcode(l1))
 

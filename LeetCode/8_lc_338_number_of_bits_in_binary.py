@@ -61,4 +61,4 @@ class Solution:
         return dp
 
 
-print(Solution().neetcode_2(0))
+print(Solution().neetcode_2(11))

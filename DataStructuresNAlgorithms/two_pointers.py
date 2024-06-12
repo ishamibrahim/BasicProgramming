@@ -26,6 +26,9 @@ class Sol:
         return None, None
 
 
+    """
+        Move all zeroes on a list to the end of the list
+    """
     def move_all_zeroes_to_the_end(self, in_array: List[int]):
         len_list = len(in_array)
         left = 0

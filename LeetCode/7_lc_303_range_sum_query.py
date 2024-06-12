@@ -1,6 +1,6 @@
 from typing import List
 """
--easy-
+--easy--
 https://leetcode.com/problems/range-sum-query-immutable
 Given an integer array nums, handle multiple queries of the following type:
 

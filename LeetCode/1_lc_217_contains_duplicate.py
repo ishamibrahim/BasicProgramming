@@ -37,5 +37,8 @@ class Solution:
                 return True
         return False
 
+
+
+
 print(Solution().containsDuplicate([1,1,1,3,3,4,3,2,4,2]))
 print(Solution().containsDuplicate2([1,1,1,3,3,4,3,2,4,2]))
