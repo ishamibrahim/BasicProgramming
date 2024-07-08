@@ -49,7 +49,7 @@ class Solution:
 
     def letterCasePermutation2(self, s: str) -> list[str]:
         """
-        This approach uses dynamic programming
+        This approach uses recursion
         Runtime: 70%
         Memory : 28%
         """

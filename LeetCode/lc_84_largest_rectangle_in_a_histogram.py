@@ -1,5 +1,9 @@
 from typing import List
+"""
+https://leetcode.com/problems/largest-rectangle-in-histogram
+Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
 
+"""
 
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
@@ -36,7 +40,10 @@ class Solution:
 
     def largestRectangleArea2(self, heights: List[int]) -> int:
         """
-        Solution from neetcode
+        Solution from neetcode.
+        Keeps a stack of rectangels forming based on previous index and value in the stack
+        IF a greater value arrives, it is added to the stack with the current location.
+        If a small value arrives, the previous value is removed from the stack and new one is added
 
         Runtime: 89%
         Memory: 66%
@@ -67,4 +74,4 @@ class Solution:
 
 
 
-print(Solution().largestRectangleArea2([1,2,2]))
+print(Solution().largestRectangleArea2([2,1,5,6,2,3]))

@@ -29,7 +29,7 @@ class Solution:
     def longestConsecutive2(self, nums: List[int]) -> int:
         """
         This solution doesn't need to sort
-        dict_ value states : 1=> not marked 2=> marked
+        dict_ value states : 1 ==> not marked 2 ==> marked
 
         Solution: Runtime: 93%
                  Memory: 6%

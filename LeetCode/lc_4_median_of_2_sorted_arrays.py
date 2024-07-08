@@ -1,6 +1,7 @@
 from typing import List
 
 """
+--hard--
 https://leetcode.com/problems/median-of-two-sorted-arrays/
 
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
@@ -11,7 +12,10 @@ Solution    -   69.8% in Runtime
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-
+        """
+        Solution    -   69.8% in Runtime
+                    -   55.1% in Memory
+        """
 
         count = 0
         nums1_len = nums1_p = len(nums1)
@@ -47,7 +51,33 @@ class Solution:
         return median
 
 
+    def findMedianSortedArrays2(self, nums1: List[int], nums2: List[int]) -> float:
+        """
+            This uses merge sort technique to merge two lists to one, then finds out the median
+            Runtime: 75%
+            Memory: 95%
+
+        """
+
+        single_arr = []
+        while nums1 or nums2:
+            if nums1 and nums2:
+                if nums1[0] < nums2[0]:
+                    single_arr.append(nums1.pop(0))
+                else:
+                    single_arr.append(nums2.pop(0))
+            elif nums1:
+                single_arr.append(nums1.pop(0))
+            else:
+                single_arr.append(nums2.pop(0))
+        median_point = len(single_arr) / 2
+        if median_point.is_integer():
+            median = (single_arr[int(median_point)] + single_arr[int(median_point)-1])/2
+        else:
+            median = float(single_arr[int(median_point)])
+        return median
 
 
 
-print(Solution().findMedianSortedArrays([1,2, 3, 4], [3,4, 9, 11]))
+print(Solution().findMedianSortedArrays2([1,2, 3, 4], [3,4, 9, 11]))
+

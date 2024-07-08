@@ -20,7 +20,7 @@ def avoid_zero_divide(func):
         try:
             return func(*args, **kwargs)
         except ZeroDivisionError:
-            return float("inf")
+            return 0
 
     return inner_func
 

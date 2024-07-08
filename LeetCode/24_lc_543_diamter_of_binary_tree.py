@@ -6,6 +6,8 @@ from LeetCode.utils import TreeNode
 https://leetcode.com/problems/diameter-of-binary-tree/
 
 Given the root of a binary tree, return the length of the diameter of the tree.
+The diameter is depth of any two leaf nodes from a single parent.The root may not be the parent
+This takes a bottom up approach since root node may not be the parent. Hence depth from root is not considered.
 Solution -  Runtime: 67%
             Memory: 80%
 """

@@ -89,3 +89,6 @@ if __name__ == '__main__':
     # print(find_indices_of_sum(given_arr, 7))
     print(find_all_chars_in_string(input_str, match_str))
     # find_shortest_substring_with_chars("asdfsubsdfssdcsbadfsd", match_str)
+
+
+

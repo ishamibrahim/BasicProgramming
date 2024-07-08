@@ -1,3 +1,4 @@
+import itertools
 import pdb
 from typing import List
 
@@ -36,7 +37,7 @@ def selection_sort(unsorted_arr):
     pivot = 0
     len_arr = len(unsorted_arr)
 
-    for i in range(len_arr - 1):
+    for _ in itertools.repeat(None, len_arr-1):
         smallest_ind = pivot
         found = False
         for small_ind in range(pivot, len_arr):
@@ -204,5 +205,5 @@ def heap_sort(unsorted_arr):
 
 new_arr = [5, 3, -1, 8, 4, 3, 0, 9, 17, 14, 18, 13, 12, 15]
 
-print(heap_sort(new_arr))
+print(selection_sort(new_arr))
 

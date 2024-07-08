@@ -26,10 +26,7 @@ class Solution:
                 root1.right = root2.right
         elif root2:
             # In case there is no root1, we create one by using root2 items and add it to the parent node
-            root1 = TreeNode()
-            root1.val = root2.val
-            root1.left = root2.left
-            root1.right = root2.right
+            root1 = root2
         return root1
 
 

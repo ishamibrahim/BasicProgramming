@@ -1,9 +1,9 @@
 """
-Given a list of string binary values, convert them to integer and find the type of progession
-If all the items are equal, then append "Stable" to the list
-If they are in ascending order, then append "Inproving", if descending then append "Degrading"
-If they are neither increasing or descreasing, then append "Unstable"
-Otherwise if the list elements are erroneous or has any unexpected values, Return "Invalid Output"
+    Given a list of string binary values, convert them to integer and find the type of progession
+    If all the items are equal, then append "Stable" to the list
+    If they are in ascending order, then append "Inproving", if descending then append "Degrading"
+    If they are neither increasing or descreasing, then append "Unstable"
+    Otherwise if the list elements are erroneous or has any unexpected values, Return "Invalid Output"
 """
 
 def solution(states):
@@ -11,7 +11,7 @@ def solution(states):
     result_arr = []
     unstable_states = False
     for arr in states:
-        index = len_states -1
+        index = len_states - 1
         result_sum = 0
         for bit in arr:
             try:

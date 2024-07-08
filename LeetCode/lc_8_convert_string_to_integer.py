@@ -23,4 +23,4 @@ class Solution:
             result = greatest-1
         return result
 
-print(Solution().myAtoi("  -42"))
+print(Solution().myAtoi("  -2289889889"))

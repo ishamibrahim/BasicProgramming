@@ -1,5 +1,6 @@
 # Definition for singly-linked list.
 """
+--easy--
 https://leetcode.com/problems/merge-two-sorted-lists/
 
 You are given the heads of two sorted linked lists list1 and list2.
@@ -48,15 +49,12 @@ class Solution:
         return final_list
 
 
-l1 = ListNode(2, ListNode(5, ListNode(8)))
-l2 = ListNode(3, ListNode(9))
+l1 = ListNode(2, ListNode(5, ListNode(11)))
+l2 = ListNode(3, ListNode(9, ListNode(12)))
 result = Solution().mergeTwoLists(l1, l2)
 result_cp = result
 
-while result_cp:
-    print(result_cp.val)
-    result_cp = result_cp.next
-print (result)
+print(result)
 
 
 

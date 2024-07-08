@@ -34,8 +34,9 @@ class Solution:
 
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         """
-        Solution    -   11.6% in Runtime
-                    -   32.4% in Memory
+        Solution merges LLs two at a time till the last list is merged.
+        Solution    -   14.6% in Runtime
+                    -   69.4% in Memory
         """
         final_list = None
         if lists:
@@ -50,6 +51,12 @@ class Solution:
         return key
 
     def mergeKLists2(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        """
+            This function creates a dict with pointers to all LLs
+            Then finds each smallest node using reduce function and adds it to the resulting LL
+            Runtime: 5%
+            Memory: 69%
+        """
         list_dict = {i: lists[i] for i in range(len(lists)) if lists[i]}
         final_result = next_node = ListNode(None, None)
         if len(lists) == 1:

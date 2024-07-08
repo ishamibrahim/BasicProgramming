@@ -22,7 +22,7 @@ class Solution:
         This is a neetcode solution.
 
         """
-        result = [root.val] # using list instead of an integer because list is going to be rereferred.
+        result = [root.val] # using list instead of an integer because list is going to be referenced.
 
         def dfs(node):
             if not node:

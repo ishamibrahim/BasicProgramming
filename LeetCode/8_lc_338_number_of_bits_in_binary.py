@@ -13,7 +13,7 @@ Solution -  Runtime : 6.9%
 class Solution:
     def calculate_bits(self, n: int) -> int:
         count = 0
-        for i in range(int(math.log(n, 2))+1):
+        for i in range(int(math.log(n, 2)) + 1):
             d = 1 << i
             if d & n:
                 count += 1

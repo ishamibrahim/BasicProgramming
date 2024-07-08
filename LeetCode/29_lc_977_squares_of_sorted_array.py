@@ -15,7 +15,7 @@ class Solution:
         1st parts finds the closes number to 0 using binary search
         2nd part uses front and back pointer to traverse through the list with pointers moving forward and backward respectively
 
-        Solution -  Rumtime: 30.6%
+        Solution -  Runtime: 30.6%
                     Memory: 21.7%
         """
         # Part I
@@ -25,9 +25,9 @@ class Solution:
         front = 0
         results = []
         while True:
-            mid = (low+high) //2
+            mid = (low+high) // 2
             if mid:
-                if mid == l_nums -1:
+                if mid == l_nums - 1:
                     if nums[mid] >= 0:
                         front = mid
                     else:

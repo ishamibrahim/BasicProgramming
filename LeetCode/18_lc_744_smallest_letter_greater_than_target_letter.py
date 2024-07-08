@@ -46,5 +46,5 @@ class Solution:
             return self.binary_search(letters, 0, len(letters), target)
 
 
-print(Solution().nextGreatestLetter(["c","f","j"], "d"))
+print(Solution().nextGreatestLetter(["c", "f", "j"], "d"))
 

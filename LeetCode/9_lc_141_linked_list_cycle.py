@@ -28,7 +28,7 @@ class Solution:
 
     def neetcode(self, head: Optional[ListNode]) -> bool:
         """
-        This uses the rabbit and tortoise method, the rabbit moves double the speed of tortoiase.
+        This uses the hare and tortoise method, the rabbit moves double the speed of tortoiase.
         A classic way to find out loops in linked list.
 
         Solution -  Runtime 91.7%

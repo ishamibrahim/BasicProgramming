@@ -17,7 +17,7 @@ final_words = []
 def print_marked_locations(marked_locations):
     final_seq = ""
     for r in marked_locations:
-        final_seq += " ".join(["1" if i else "0" for i in r])
+        final_seq += " ".join(["#" if i else "." for i in r])
         final_seq += "\n"
     final_seq += "\n"
     print(final_seq)

@@ -5,6 +5,7 @@ all the elements of nums except nums[i].
 WITHOUT USING DIVISION OPERATOR
 """
 import functools
+import itertools
 from typing import List
 
 
@@ -49,8 +50,24 @@ class Solution:
             postfix *= nums[i]
         return prod_list
 
+    def productExceptSelf2(self, nums: List[int]) -> List[int]:
+        """
+        This approach is iterating over the list removing item and adding it again after calculation
+         and appending a product of reduce() operation
+        Runtime: Timeout
+        """
+        prod_list = []
+
+        for _ in itertools.repeat(None, len(nums)):
+            popped = nums.pop(0)
+            prod = functools.reduce(lambda x, y: x*y, nums)
+            prod_list.append(prod)
+            nums.append(popped)
+        return prod_list
+
 
 
 print(Solution().productExceptSelf([4, 3, 5, 6, 2]))
 print(Solution().neetCode([1, 3, 5, 6, 2]))
+print(Solution().productExceptSelf2([4, 3, 5, 6, 2]))
 

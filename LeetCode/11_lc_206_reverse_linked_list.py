@@ -22,8 +22,9 @@ class Solution:
             return head
         n = head.next
         final = self.reverseList(n)
-        head.next = None
         n.next = head
+        head.next = None
+
         return final
 
 
@@ -31,6 +32,6 @@ ll = ListNode(6, ListNode(6, ListNode(90, ListNode(45, ListNode(55, ListNode(21)
 l1 = ListNode(6, ListNode(5))
 l2 = ListNode(3)
 s_time = datetime.now()
-print(Solution().reverseList(l1))
+print(Solution().reverseList(ll))
 print("The solution took %s "%(datetime.now()-s_time))
 

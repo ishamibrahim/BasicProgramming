@@ -1,10 +1,9 @@
 from typing import List
 """
 https://leetcode.com/problems/two-sum
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Given an array of integers nums and an integer target, return indices of the two numbers such that 
+they add up to target.
 
-Solution-   Runtime: 86.7%
-            Memory: 5.7%
 """
 
 class Solution:
@@ -12,6 +11,8 @@ class Solution:
         """
         First it creates a dictionary with number and their indices
         then iterates through each number to find the difference.
+        Runtime: 86.7%
+        Memory: 5.7%
         """
         hashmap = dict()
         for i in range(len(nums)):
@@ -26,6 +27,7 @@ class Solution:
             delta_pos = hashmap.get(delta)
 
             if delta_pos:
+                # If delta is same as num, i.e num is half of target
                 if delta == num:
                     if len(delta_pos) == 1:
                         continue
