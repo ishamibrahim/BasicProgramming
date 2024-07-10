@@ -8,11 +8,11 @@ Ex: Given: [
     Result = [a1A, a1B, a1C...
 """
 
-def dfs(req_list, counter, combination, result):
+def backtrack(req_list, counter, combination, result):
     if counter < len(req_list):
         for letter in req_list[counter]:
             combination += letter
-            dfs(req_list, counter+1, combination, result)
+            backtrack(req_list, counter+1, combination, result)
             combination = combination[:-1]
     else:
         result.append(combination)
@@ -23,10 +23,11 @@ def find_complete_combinations():
     result = []
     req = [
             ["a", "b", "c", "d"],
-            ["1", "2", "3", "4", "5"],
-            ["A", "B", "C", "D"]
+            ["1", "2", "3", "4"],
+            ["A", "B", "C", "D"],
+            ["!", "@", "#", "$"]
             ]
-    dfs(req, counter, "",  result)
+    backtrack(req, counter, "",  result)
     return result
 
 print(find_complete_combinations())
