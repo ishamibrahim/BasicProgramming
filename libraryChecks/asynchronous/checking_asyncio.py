@@ -64,7 +64,7 @@ async def part2(n: int, arg: str) -> str:
     print(f"part2{n, arg} sleeping for {i} seconds.")
     await asyncio.sleep(i)
     result = f"result{n}-2 derived from {arg}"
-    print(f"Returning part2{n, arg} == {result}.")
+    print(f"Returning part2 {n, arg} == {result}.")
     return result
 
 async def chain(n: int) -> None:
@@ -80,7 +80,7 @@ async def main2(*args):
 # if __name__ == "__main__":
 #     import sys
 #     random.seed(555)
-#     args = [4, 8, 12] if len(sys.argv) == 1 else map(int, sys.argv[1:])
+#     args = [4, 8, 12] if len(sys.argv) == 1 else map(lambda x: int(x), sys.argv[1:])
 #     start = time.perf_counter()
 #     asyncio.run(main2(*args))
 #     end = time.perf_counter() - start
@@ -168,6 +168,7 @@ import logging
 import re
 logger = logging.getLogger('asyncUrl')
 logging.getLogger("chardet.charsetprober").disabled = True
+logging.basicConfig(filename='aasyncio.log', encoding='utf-8', level=logging.DEBUG)
 HREF_RE = re.compile('href="(.*?)"')
 
 
@@ -221,13 +222,13 @@ async def crawl_for_urls_in_bulk(url_list, outfile):
         await asyncio.gather(*tasks)
 
 
-if __name__ == "__main__":
-    here = pathlib.Path(__file__).parent
-    with open(here.joinpath("urls.txt")) as infile:
-        urls = set(map(str.strip, infile))
-
-    outpath = here.joinpath("foundurls.csv")
-    with open(outpath, 'w') as outfile:
-        outfile.write("sourced_url,\tparsedurl\n")
-
-    asyncio.run(crawl_for_urls_in_bulk(url_list=urls, outfile=outpath))
+# if __name__ == "__main__":
+#     here = pathlib.Path(__file__).parent
+#     with open(here.joinpath("urls.txt")) as infile:
+#         urls = set(map(str.strip, infile))
+#
+#     outpath = here.joinpath("foundurls.csv")
+#     with open(outpath, 'w') as outfile:
+#         outfile.write("sourced_url,\tparsedurl\n")
+#
+#     asyncio.run(crawl_for_urls_in_bulk(url_list=urls, outfile=outpath))

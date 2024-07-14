@@ -1,5 +1,5 @@
 """
-PRovided a list of string characters find all complete ombinatoins of string characters with
+PRovided a list of string characters find all complete combinations of string characters with
 Ex: Given: [
             [a, b, c, d,...
             [1, 2, 3, 4, 5....

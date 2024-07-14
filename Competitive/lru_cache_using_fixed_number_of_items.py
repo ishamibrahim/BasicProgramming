@@ -22,7 +22,7 @@ class LRUCache:
         this = self.left
         result = ""
         while this:
-            result += "{}->".format(this.val)
+            result += f"{this.val}->"
             this = this.next
         return result
 

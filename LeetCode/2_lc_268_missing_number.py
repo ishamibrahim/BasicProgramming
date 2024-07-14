@@ -18,10 +18,10 @@ class Solution:
         sorted_nums = sorted(nums)
         count = 0
         for i in sorted_nums:
-            if i !=count:
+            if i != count:
                 missing = count
                 break
-            count+= 1
+            count += 1
         return missing
 
     def missingNumber2(self, nums: List[int]) -> int:

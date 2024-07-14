@@ -13,14 +13,20 @@ class Solution:
     def print_minimum_difference(self, nums: List[int]):
         """
         Solution uses O(n log n) time for sorting and O(n) time for the algorithm
-        with O(1) space used.
+        with O(1) space used exclusive of final_list
         """
         nums.sort()
         minim = float("INF")
+        previous_min = minim
+        final_list = []
         for i in range(len(nums)-1):
-            minim = min(minim, nums[i+1] - nums[i] )
-        for i in range(len(nums)-1):
-            if nums[i+1] - nums[i]  == minim:
-                print(nums[i], nums[i+1])
+            minim = min(minim, nums[i+1] - nums[i])
+            if minim != previous_min:
+                final_list = [(nums[i], nums[i+1])]
+                previous_min = minim
+            else:
+                if nums[i+1] - nums[i] == minim:
+                    final_list.append((nums[i], nums[i+1]))
+        return final_list
 
-Solution().print_minimum_difference( [2, 15, 7, 4, 10, 13])
+print(Solution().print_minimum_difference( [2, 15, 7, 4, 10, 13]))

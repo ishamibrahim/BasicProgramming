@@ -10,9 +10,7 @@ customer_list = [(1, 20), (3, 3), (5, 2), (6, 3), (19, 1)]
 
 room_list = []
 occupied_list = []
-class Room:
-    def __init__(self):
-        self.end_time
+
 
 def main():
     for customer in customer_list:
@@ -29,10 +27,11 @@ def main():
         if not room_found:
             room_list.append(start_time + duration)
             occupied_list.append(1)
-    ocupied_max_count = max(occupied_list)
-    occupied_max_room = occupied_list.index(ocupied_max_count)
+    occupied_max_count = max(occupied_list)
+    occupied_max_room = occupied_list.index(occupied_max_count)
 
-    print(ocupied_max_count, occupied_max_room)
+    print(occupied_max_count, occupied_max_room)
+
 
 if __name__ == '__main__':
     main()

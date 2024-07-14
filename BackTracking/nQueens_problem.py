@@ -45,9 +45,12 @@ def backtrack_queens(row, size, chessboard):
             NQueens.column_indices.add(col)
             chessboard[row][col] = " Q"
             backtrack_queens(row+1, size, chessboard)
-            NQueens.negative_diagonals.remove(row - col)
-            NQueens.positive_diagonals.remove(row + col)
-            NQueens.column_indices.remove(col)
+            # NQueens.negative_diagonals.remove(row - col)
+            # NQueens.positive_diagonals.remove(row + col)
+            # NQueens.column_indices.remove(col)
+            NQueens.negative_diagonals.pop()
+            NQueens.positive_diagonals.pop()
+            NQueens.column_indices.pop()
             chessboard[row][col] = " ."
 
 
@@ -57,7 +60,7 @@ def create_nqueens(size):
 
 
 def main():
-    create_nqueens(8)
+    create_nqueens(4)
     NQueens.print_final_board()
 
         

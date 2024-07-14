@@ -6,6 +6,7 @@
     Otherwise if the list elements are erroneous or has any unexpected values, Return "Invalid Output"
 """
 
+
 def solution(states):
     len_states = len(states[0])
     result_arr = []
@@ -41,6 +42,10 @@ def solution(states):
         else:
             result_arr.append("Unstable")
 
-
-
     return list(map(lambda x: str(x), result_arr))
+
+
+print(solution([["1", "1", "0", "1", "1", "1"],
+                ["0", "1", "1", "0", "0", "1"],
+                ["0", "1", "0", "1", "0", "0"],
+                ["0", "0", "1", "0", "1", "0"]]))
