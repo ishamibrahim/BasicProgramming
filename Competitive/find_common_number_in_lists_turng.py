@@ -1,6 +1,6 @@
 """
 
-Given a set of lists containeing integers in a sorted order find the least common number in all the lists
+Given a set of lists containing integers in a sorted order find the least common number in all the lists
 ex: req = [[2,4,6,8], [2,3,4,6, 8], [5,6,8,10], [1, 4, 6, 8]]
 Result = 6
 If no common numbers are found return -1
